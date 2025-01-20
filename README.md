@@ -1,6 +1,6 @@
 # CS257-TeamTemplate
 # Team Amazooglesoft
-Emma/
-Nora/
-Nathan/
+Emma\
+Nora\
+Nathan\
 Aaron
