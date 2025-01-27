@@ -11,15 +11,14 @@ Aaron
 To use this command line interface, make sure to set up a virtual environment with pandas (a software library for Python) installed. Without this setup, the command line will not run correctly. Make sure to run all commands within the active virtual environment. 
 
 ### Example Commands
-python3 command_line.py --list CHEESE\
-Output:\
+```python3 command_line.py --list CHEESE\
 CHEESE,BLUE\
 CHEESE,BRICK\
-CHEESE,BRIE\
-python3 command_line.py --healthfacts CHEESE,BLUE\
-Output:\
+CHEESE,BRIE\```
+
+```python3 command_line.py --healthfacts CHEESE,BLUE\
 Alpha Carotene: 0.0\
 Ash: 5.11\
 Beta Carotene: 74.0\
 Beta Cryptoxanthin: 0.0\
-Carbohydrate: 2.34\
+Carbohydrate: 2.34\```
