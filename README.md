@@ -14,10 +14,9 @@ To use this command line interface, make sure to set up a virtual environment wi
 ```python3 command_line.py --list CHEESE\
 CHEESE,BLUE\
 CHEESE,BRICK\
-CHEESE,BRIE\```
-
-
-```python3 command_line.py --healthfacts CHEESE,BLUE\
+CHEESE,BRIE\
+\
+python3 command_line.py --healthfacts CHEESE,BLUE\
 Alpha Carotene: 0.0\
 Ash: 5.11\
 Beta Carotene: 74.0\
