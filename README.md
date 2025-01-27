@@ -12,4 +12,14 @@ To use this command line interface, make sure to set up a virtual environment wi
 
 ### Example Commands
 python3 command_line.py --list CHEESE\
-python3 command_line.py --healthfacts CHEESE,BLUE
+Output:\
+CHEESE,BLUE\
+CHEESE,BRICK\
+CHEESE,BRIE\
+python3 command_line.py --healthfacts CHEESE,BLUE\
+Output:\
+Alpha Carotene: 0.0\
+Ash: 5.11\
+Beta Carotene: 74.0\
+Beta Cryptoxanthin: 0.0\
+Carbohydrate: 2.34\
