@@ -5,7 +5,8 @@
 The “list” command allows users to input a category of food, and the command line will output all the types of that category found in the dataset. 
 
 **Example usage:**
-'python3 command_line.py --list CHEESE'
+
+	python3 command_line.py --list CHEESE
 
 If a user inputs the general category CHEESE, the command will output the results like:
 
