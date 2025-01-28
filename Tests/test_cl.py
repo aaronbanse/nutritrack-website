@@ -14,7 +14,7 @@ class Test_command_line(unittest.TestCase):
         code.terminate()
 
     def test_main_command_line_list_edgeCase(self):
-        """tests the command_line file --list function to determine if it is functional"""
+        """tests the command_line file --list function for an edge case where a food is not included in the data set"""
         cmd = ["python3", "-u", "command_line.py", "--list", "APPLE"]
         # format of the line below retrieved from linked python subprocess article in assignment
         code = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, text=True)
@@ -32,7 +32,7 @@ class Test_command_line(unittest.TestCase):
         code.terminate()
     
     def test_main_command_line_health_facts_edgeCase(self):
-        """tests the command_line file --healthfacts function to determine if it is functional"""
+        """tests the command_line file --healthfacts function for an edge case where a food is not included in the data set"""
         cmd = ["python3", "-u", "command_line.py", "--healthfacts", "APPLE,HONEYCRISP"]
         # format of the line below retrieved from linked python subprocess article in assignment
         code = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, text=True)

@@ -1,9 +1,9 @@
 '''
 USAGE
 
-In the command line, run "python command_line.py [command]".
+Make sure to be in a virtual environment in which pandas is installed prior to running any command.
 
-Make sure to be in a virtual environment in which pandas is installed prior to running the command.
+In the command line, run "python command_line.py [command]".
 
 Currently implemented commands:
 --list [category] : list out descriptions of all items in the given category.
