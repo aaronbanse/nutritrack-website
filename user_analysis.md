@@ -1,4 +1,4 @@
-**Command Line Features:**
+##**Command Line Features:**
 
 ***<span style="text-decoration:underline;">“list” Command</span>***
 
@@ -37,7 +37,7 @@ And the output would include nutritional details in categories such as:
 
 This command provides a list of relevant nutritional data.
 
-**Command Line Potential Users:**
+##**Command Line Potential Users:**
 
 ***<span style="text-decoration:underline;">“list”:</span>***
 
@@ -47,7 +47,7 @@ Users who are looking for a specific type of cheese but aren’t sure what it is
 
 Users will use this command when they are looking for detailed nutritional information for a particular food item. This command will give them different kinds of nutritional facts that are valuable to a user who is diet planning, doing academic research, etc. It is also helpful if a user is trying to make health-conscious recipe substitutes, especially used with the list command. A user can go through the types of food listed by the list function to analyze which variety in the food category contains the most of a particular nutrient that they are seeking.
 
-**Command Line Benefits and Harms as Applied to CIDER:**
+##**Command Line Benefits and Harms as Applied to CIDER:**
 
 ***<span style="text-decoration:underline;">Benefits:</span>*** \
 	These commands benefit users in a variety of ways. First, the commands provide simple and straightforward access to a helpful data set that users might not otherwise be able to access. Our data set provides users with helpful information about the contents of their food, but it is extremely extensive, which can be overwhelming. The data set is too large to manually search through, thus, by creating these commands, users can access the exact information they need with relative ease.
