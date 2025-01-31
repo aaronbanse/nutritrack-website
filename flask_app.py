@@ -1,8 +1,8 @@
 from flask import Flask
 import csv
 import pandas
-from ProductionCode.get_food_data_copy import fetch_category
-from ProductionCode.get_food_data_copy import health_facts
+from ProductionCode.get_food_data import fetch_category
+from ProductionCode.get_food_data import health_facts
 
 dummy_data = []
 
@@ -20,8 +20,8 @@ app = Flask(__name__)
 @app.route("/")
 def homepage():
     return """
-    <h1>Welcome to The Homepage!</h1>
-    <h3>Use this app to find useful information about foods, nutrition, and more!</h3>
+    <h1>Welcome to The Homepage</h1>
+    <h3>Use this app to find useful information about foods, nutrition, and more</h3>
     <p>
     <h2>App Features:</h2>
     <p>
