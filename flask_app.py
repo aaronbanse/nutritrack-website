@@ -1,18 +1,9 @@
-from flask import Flask
-import csv
+from flask import Flask, render_template
 import pandas
-from ProductionCode.get_food_data import fetch_category
-from ProductionCode.get_food_data import health_facts
+from ProductionCode.get_food_data import fetch_category, health_facts, get_data, error
 
-dummy_data = []
-
-
-def load_data():
-   """Loads data from the csv in the Data folder"""
-   with open('Data/food_dummy_data.csv', newline='') as f:
-       reader = csv.reader(f)
-       for row in reader:
-           dummy_data.append(row)
+# get dummy data as a pandas dataframe
+dummy_data = get_data(dummy=True)
 
 app = Flask(__name__)
 
@@ -40,37 +31,43 @@ def homepage():
     <h3>Take a look at (and maybe copy) your URL now so that you can come back to the homepage if you need to!</h3>
     """
 
-@app.route("/<row>/<column>", strict_slashes = False)
-def get_cell(row, column):
+@app.route("/<column_name>/<row>", strict_slashes = False)
+def get_cell(column_name: str, row: str):
     """
-    Accesses the information of a specific cell from an input row and column.
+    Accesses the information of a specific cell from an input column name and row.
     
     Arguments:
+    column_name : input from route
     row : input from route
-    column : input from route
     """
-    row, column = int(row), int(column)
-    load_data()
-    try:
-        return ("This cell contains " + dummy_data[row][column] + " from the column labeled: '" + dummy_data[0][column] + "' and from the row labeled '" + dummy_data[row][0] + "'.")
-    except IndexError:
-        return ("This cell is out of bounds. Please try again by inputting a valid row and column into the URL above.")
+    
+    # error checks
+    if not row.isdigit():
+        return error("row must be an integer.")
+    if column_name not in dummy_data.columns:
+        return error(f"column name \"{column_name}\" not found")
+    if int(row) < 0 or int(row) >= len(dummy_data[column_name]) - 1:
+        return error(f"row index out of bounds. Only use indices from 0 to {len(dummy_data[column_name])-1}.")
+    
+    return dummy_data[column_name][int(row)]
 
 @app.route("/list/<category>", strict_slashes = False)
-def get_food(category):
+def get_foods(category):
     """
     Using the helper functions, accesses the data set to print the related food types of a specific category of food.
     
     Arguments:
     category : input from route, food category
     """
-    category = category.upper()
+    
+    category = category.upper() # format for search
     items = list(fetch_category(category))
-    category = category.lower()
+    
+    category = category.lower() # format for printing
     if len(items) == 0:
-        return ("The category of '" + category + "' is not in the data set. Would you like to search again?")
+        return ("The category '" + category + "' is not in the data set.")
     else:
-        return ("The types of " + category + " in this data set are: " + "; ".join(items).title())
+        return ("The types of " + category + " in this data set are:<br>" + "<br>".join([item.title() for item in items]))
 
 @app.route("/health-facts/<description>", strict_slashes = False)
 def get_nutrition(description):
@@ -88,7 +85,7 @@ def get_nutrition(description):
     if len(values) == len(labels):
         for i in range(len(labels)):
             food_info.append(str(labels[i][5:] + ": " + str(values[i]))) #formatting retrieved from command_line.py
-        return ("The nutrients included in '" + description.title() + "' are: " + "; ".join(food_info))
+        return ("The nutrients included in '" + description.title() + "' are:<br>" + "<br>".join(food_info))
     else:
         return ("The food named '" + description.title() + "' is not in the data set. Would you like to search again?")
 
