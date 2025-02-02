@@ -1,4 +1,4 @@
-from ind_flask_app import *
+from flask_app import *
 import unittest
 
 class Test_homepage(unittest.TestCase):
@@ -6,8 +6,8 @@ class Test_homepage(unittest.TestCase):
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
         self.assertEqual(b"""
-    <h1>Welcome to The Homepage!</h1>
-    <h3>Use this app to find useful information about foods, nutrition, and more!</h3>
+    <h1>Welcome to The Homepage</h1>
+    <h3>Use this app to find useful information about foods, nutrition, and more</h3>
     <p>
     <h2>App Features:</h2>
     <p>
@@ -26,32 +26,32 @@ class Test_homepage(unittest.TestCase):
     <h3>Take a look at (and maybe copy) your URL now so that you can come back to the homepage if you need to!</h3>
     """, response.data)
 
-class Test_get_food(unittest.TestCase):
+class Test_get_foods(unittest.TestCase):
     def test_get_food_route(self):
         self.app = app.test_client()
         response = self.app.get('/list/cheese', follow_redirects=True)
-        self.assertEqual(b"The types of cheese in this data set are: Cheese,Blue; Cheese,Brick; Cheese,Brie", response.data)
+        self.assertEqual(b"The types of cheese in this data set are:<br>Cheese,Blue<br>Cheese,Brick<br>Cheese,Brie", response.data)
     def test_get_food_route_edgecase(self):
         self.app = app.test_client()
         response = self.app.get('/list/apple', follow_redirects=True)
-        self.assertEqual(b"The category of 'apple' is not in the data set. Would you like to search again?", response.data)
+        self.assertEqual(b"The category 'apple' is not in the data set.", response.data)
     def test_get_food(self):
-        self.assertEqual(get_food("cheese"),"The types of cheese in this data set are: Cheese,Blue; Cheese,Brick; Cheese,Brie")
+        self.assertEqual(get_foods("cheese"),"The types of cheese in this data set are:<br>Cheese,Blue<br>Cheese,Brick<br>Cheese,Brie")
     def test_get_food_edgecase(self):
         with self.assertRaises(TypeError):
-            get_food()
+            get_foods()
 
 class Test_get_nutrition(unittest.TestCase):
     def test_get_nutrition(self):
         self.app = app.test_client()
         response = self.app.get('/health-facts/cheese,blue', follow_redirects=True)
-        self.assertEqual(b"The nutrients included in 'Cheese,Blue' are: Alpha Carotene: 0.0; Ash: 5.11; Beta Carotene: 74.0; Beta Cryptoxanthin: 0.0; Carbohydrate: 2.34", response.data)
+        self.assertEqual(b"The nutrients included in 'Cheese,Blue' are:<br>Alpha Carotene:<br>0.0<br>Ash: 5.11<br>Beta Carotene: 74.0<br>Beta Cryptoxanthin: 0.0<br>Carbohydrate: 2.34", response.data)
     def test_get_nutrition_route_edgecase(self):
         self.app = app.test_client()
         response = self.app.get('/health-facts/cheese', follow_redirects=True)
         self.assertEqual(b"The food named 'Cheese' is not in the data set. Would you like to search again?", response.data)
     def test_get_nutrition(self):
-        self.assertEqual(get_nutrition("cheese,blue"),"The nutrients included in 'Cheese,Blue' are: Alpha Carotene: 0.0; Ash: 5.11; Beta Carotene: 74.0; Beta Cryptoxanthin: 0.0; Carbohydrate: 2.34")
+        self.assertEqual(get_nutrition("cheese,blue"),"The nutrients included in 'Cheese,Blue' are:<br>Alpha Carotene: 0.0<br>Ash: 5.11<br>Beta Carotene: 74.0<br>Beta Cryptoxanthin: 0.0<br>Carbohydrate: 2.34")
     def test_get_nutrition_edgecase(self):
         with self.assertRaises(TypeError):
             get_nutrition()
