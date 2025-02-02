@@ -1,7 +1,7 @@
 import unittest
 import subprocess
 from command_line import *
-from ProductionCode.get_food_data import*
+from ProductionCode.get_food_data import *
 
 class Test_command_line(unittest.TestCase):
     def test_main_command_line_list(self):
@@ -37,20 +37,20 @@ class Test_command_line(unittest.TestCase):
         # format of the line below retrieved from linked python subprocess article in assignment
         code = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, text=True)
         output, err = code.communicate()
-        self.assertEqual(output.strip(), '')
+        self.assertEqual(output.strip(), 'No food named APPLE,HONEYCRISP found.')
         code.terminate()
 
 
-class Test_get_food_data(unittest.TestCase):
-    def test_get_df(self):
-        """tests the get_df function in the get_food_data file to determine that it is creating the correct DataFrame"""
-        self.assertEqual("\n".join(list(get_df())),"Category\nDescription\nNutrient Data Bank Number\nData.Alpha Carotene\nData.Ash\nData.Beta Carotene\nData.Beta Cryptoxanthin\nData.Carbohydrate")
+class Test_get_data(unittest.TestCase):
+    def test_get_data(self):
+        """tests the get_data function in the get_food_data file to determine that it is creating the correct DataFrame"""
+        self.assertEqual("\n".join(list(get_data(dummy=True))),"Category\nDescription\nNutrient Data Bank Number\nData.Alpha Carotene\nData.Ash\nData.Beta Carotene\nData.Beta Cryptoxanthin\nData.Carbohydrate")
     
-    def test__typeError_get_df(self):
-        """tests an edge case of the get_df function in the get_food_data file to determine that
+    def test__typeError_get_data(self):
+        """tests an edge case of the get_data function in the get_food_data file to determine that
         the correct number of arguments were declared"""
         with self.assertRaises(TypeError):
-            get_df("argument")
+            get_data("argument")
 
     def test_fetch_category(self):
         """tests the fetch_category function in the get_food_data file with a CHEESE example

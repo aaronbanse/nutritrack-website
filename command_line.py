@@ -12,8 +12,7 @@ Currently implemented commands:
 '''
 
 import sys
-from ProductionCode.get_food_data import fetch_category
-from ProductionCode.get_food_data import health_facts
+from ProductionCode.get_food_data import fetch_category, health_facts
 
 def main():
     args=sys.argv[1:]
