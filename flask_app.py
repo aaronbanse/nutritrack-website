@@ -39,7 +39,10 @@ def get_cell(column_name: str, row: str):
     Arguments:
     column_name : input from route
     row : input from route
+    
+    column_name is not case-sensitive
     """
+    column_name = column_name.title()
     
     # error checks
     if not row.isdigit():
