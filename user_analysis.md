@@ -117,11 +117,7 @@ Users will use this command when they are looking for detailed nutritional infor
 
 ***<span style="text-decoration:underline;">Harms:</span>***
 
-<<<<<<< HEAD
-As designers, we are assuming that users are seeking to alter their diet or pay extra attention to it. These very assumptions are built into our culture’s obsession with “clean eating,” dieting, altering food consumption, and overall diet culture. This culture can be helpful for some, but for others, it can be very detrimental to mental health, physical well-being, and overall wellness.
-=======
 	As designers, we are assuming that users are seeking to alter their diet or pay extra attention to it. These very assumptions are built into our culture’s obsession with “clean eating,” dieting, altering food consumption, and overall diet culture. This culture can be helpful for some, but for others, it can be very detrimental to mental health, physical well-being, and overall wellness. Additionally, it requires some technical knowledge, which can exclude those who are unfamiliar with structured URL commands or those who are not very strong in navigating on a computer. 
->>>>>>> ac54a8a (updating markdown)
 
 ***<span style="text-decoration:underline;">CIDER:</span>***
 
@@ -210,4 +206,3 @@ A possible solution to this is to implement a more user-friendly search interfac
 
 
     Ensure food categorization labels align with commongly used terms or we could also make a glossary of all the foods to match with which category they are in. Another possibilty would be to create a synonym-matching feature to assist users in identifying the correct search term. 
->>>>>>> ac54a8a (updating markdown)
