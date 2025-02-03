@@ -32,18 +32,19 @@ The “healthfacts” command displays nutritional facts for a specific food ite
 To find information about blue cheese, a user could input:
 
 
-
-* python3 command_line.py --healthfacts CHEESE,BLUE
+```
+python3 command_line.py --healthfacts CHEESE,BLUE
+```
 
 And the output would include nutritional details in categories such as:
 
-
-
-* Alpha Carotene: 0.0
-* Ash: 5.11
-* Beta Carotene: 74.0
-* Beta Cryptoxanthin: 0.0
-* Carbohydrate: 2.34
+```
+Alpha Carotene: 0.0
+Ash: 5.11
+Beta Carotene: 74.0
+Beta Cryptoxanthin: 0.0
+Carbohydrate: 2.34
+```
 
 This command provides a list of relevant nutritional data.
 
@@ -59,16 +60,20 @@ If a user searches:
 
 
 
-* [URL]/list/CHEESE
+```
+[URL]/list/CHEESE
+```
 
  The webpage will provide the results:
 
 
 
-* The types of cheese in this data set are:
-* Cheese,Blue
-* Cheese,Brick
-* Cheese,Brie
+```
+The types of cheese in this data set are:
+Cheese,Blue
+Cheese,Brick
+Cheese,Brie
+```
 
 This command provides a comprehensive list of all types of cheese stored in the dataset.
 
@@ -82,13 +87,17 @@ If a user searches:
 
 
 
-* [URL]/health-facts/cheese,brie
+```
+[URL]/health-facts/cheese,brie
+```
 
 The webpage will provide the results:
 
 
 
-* The nutrients included in 'Cheese,Brie' are: Alpha Carotene: 0.0; Ash: 2.7; Beta Carotene: 9.0; Beta Cryptoxanthin: 0.0; Carbohydrate: 0.45
+```
+The nutrients included in 'Cheese,Brie' are: Alpha Carotene: 0.0; Ash: 2.7; Beta Carotene: 9.0; Beta Cryptoxanthin: 0.0; Carbohydrate: 0.45
+```
 
 This command provides a list of relevant nutritional data.
 
