@@ -172,6 +172,7 @@ Users have stable internet access to utilize the Flask application. Those who li
 
     
 Users may not recognize food category labels that are used in this dataset. If the category names do not align with terminology the user is used to, users may experience difficulty finding relevant food items. This is also applicable to food items that don't belong to any category. 
+
 *Design*
 
 <span style="text-decoration:underline;">Assumption #1:</span>
