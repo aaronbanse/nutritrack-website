@@ -111,13 +111,17 @@ Users will use this command when they are looking for detailed nutritional infor
 **Command Line Benefits and Harms as Applied to CIDER:**
 
 ***<span style="text-decoration:underline;">Benefits:</span>*** \
-	These commands benefit users in a variety of ways. First, the commands provide simple and straightforward access to a helpful data set that users might not otherwise be able to access. Our data set provides users with helpful information about the contents of their food, but it is extremely extensive, which can be overwhelming. The data set is too large to manually search through, thus, by creating these commands, users can access the exact information they need with relative ease.
-
-By providing users access to this data set, we are giving them the opportunity to alter recipes to maximize health benefits as well as be more exploratory in their food choices.
+	These commands benefit users in a variety of ways. First, the commands provide simple and straightforward access to a helpful data set that users might not otherwise be able to access. Our data set provides users with helpful information about the contents of their food, but it is extremely extensive, which can be overwhelming. The inclusion of a web-based interface creates greater accessibility for users who prefer a visual representation over the command-line inputs.
+    
+    By providing users access to this data set, we are giving them the opportunity to alter recipes to maximize health benefits as well as be more exploratory in their food choices.
 
 ***<span style="text-decoration:underline;">Harms:</span>***
 
+<<<<<<< HEAD
 As designers, we are assuming that users are seeking to alter their diet or pay extra attention to it. These very assumptions are built into our culture’s obsession with “clean eating,” dieting, altering food consumption, and overall diet culture. This culture can be helpful for some, but for others, it can be very detrimental to mental health, physical well-being, and overall wellness.
+=======
+	As designers, we are assuming that users are seeking to alter their diet or pay extra attention to it. These very assumptions are built into our culture’s obsession with “clean eating,” dieting, altering food consumption, and overall diet culture. This culture can be helpful for some, but for others, it can be very detrimental to mental health, physical well-being, and overall wellness. Additionally, it requires some technical knowledge, which can exclude those who are unfamiliar with structured URL commands or those who are not very strong in navigating on a computer. 
+>>>>>>> ac54a8a (updating markdown)
 
 ***<span style="text-decoration:underline;">CIDER:</span>***
 
@@ -130,14 +134,16 @@ Our design assumes that:
 * Users have access to a computer
 * Users are familiar with Unix/creating a virtual environment/using pandas
 * Users have fine motor skills
-* Users can interpret and apply our information
-* Users can read
-* Users can type/spell
+* Users can interpret and apply the information
+* Users can read and spell
+* Users can type
 * Users have the monetary resources necessary to afford foods and ingredients
 * Users are diet conscious/Users are seeking to change their dieting habits
 * Users have a space in which they can cook and have the means/ability to cook
 * Users have reliable internet access
 * Users are comfortable navigating web-based applications
+* Users understand how to input structured commands in the URL
+* users can recognize common food categorization items
 
 *Imagine:*
 
@@ -161,6 +167,15 @@ Another assumption that our design makes is that users have a space in which the
 
 Our fourth assumption is that users are comfortable with using web-based navigation. Some users may struggle with URL-based interactions, especially when if they are unfamiliar with the structure of what to input into the URL. This can be particularly challenging for older adults, individuals with cognitive disabilities, or those who are new to this platform. 
 
+<span style="text-decoration:underline;">Assumption #5:</span>
+
+
+    Users have stable internet access to utilize the Flask application. Those who live in areas with poor connectivity or frequent power outages may find it hard to retrieve data, therefore limiting accessibility. This is similar to those without any internet access at home, as they will have to travel somewehere that offers internet access to use our platform.
+
+<span style="text-decoration:underline;">Assumption #6:</span>
+
+    
+    Users may not recognize food category labels that are used in this dataset. If the category names do not align with terminology the user is used to, users may experience difficulty finding relevant food items. This is also applicable to food items that don't belong to any category. 
 *Design*
 
 <span style="text-decoration:underline;">Assumption #1:</span>
@@ -181,4 +196,18 @@ It is difficult to fix this assumption because the assumption is embedded in the
 <span style="text-decoration:underline;">Assumption #4:</span>
 
 
+<<<<<<< HEAD
 A possible solution to this is to implement a more user-friendly search interface with dropdown menus, autocomplete search suggestions, or more in-depth guidelines to assist users unfamiliar with structured URL inputs. These upgrades will make the Flask interface more inclusive and user-friendly for a broader audience. 
+=======
+    A possible solution to this is to implement a more user-friendly search interface with dropdown menus, autocomplete search suggestions, or more in-depth guidelines to assist users unfamiliar with structured URL inputs. These upgrades will make the Flask interface more inclusive and user-friendly for a broader audience. 
+
+<span style="text-decoration:underline;">Assumption #5:</span>
+
+
+    We could consider implementing offline caching, allowing users to store data temporarily and retrieve it later when they regain connectivity. Additionally, providing a downloadable version of the dataset could offer a alternative way for users to access information without relying on constant internet connection. 
+
+<span style="text-decoration:underline;">Assumption #6:</span>
+
+
+    Ensure food categorization labels align with commongly used terms or we could also make a glossary of all the foods to match with which category they are in. Another possibilty would be to create a synonym-matching feature to assist users in identifying the correct search term. 
+>>>>>>> ac54a8a (updating markdown)
