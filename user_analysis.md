@@ -8,17 +8,18 @@ The “list” command allows users to input a category of food, and the command
 
 If a user inputs:
 
-
-
-* python3 command_line.py –list CHEESE
+'''
+python3 command_line.py –list CHEESE
+'''
 
 The command will output results like:
 
 
-
-* CHEESE,BLUE
-* CHEESE,BRICK
-* CHEESE,BRIE
+'''
+CHEESE,BLUE
+CHEESE,BRICK
+CHEESE,BRIE
+'''
 
 This command provides a comprehensive list of all types of cheese stored in the dataset.
 
