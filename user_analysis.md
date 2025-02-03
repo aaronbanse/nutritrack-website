@@ -96,7 +96,12 @@ The webpage will provide the results:
 
 
 ```
-The nutrients included in 'Cheese,Brie' are: Alpha Carotene: 0.0; Ash: 2.7; Beta Carotene: 9.0; Beta Cryptoxanthin: 0.0; Carbohydrate: 0.45
+The nutrients included in 'Cheese,Brie' are:
+Alpha Carotene: 0.0
+Ash: 2.7
+Beta Carotene: 9.0
+Beta Cryptoxanthin: 0.0
+Carbohydrate: 0.45
 ```
 
 This command provides a list of relevant nutritional data.
