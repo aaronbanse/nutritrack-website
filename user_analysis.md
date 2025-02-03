@@ -129,13 +129,17 @@ Users will use this command when they are looking for detailed nutritional infor
 **Command Line Benefits and Harms as Applied to CIDER:**
 
 ***<span style="text-decoration:underline;">Benefits:</span>*** \
-	These commands benefit users in a variety of ways. First, the commands provide straightforward access to a helpful data set that users might not otherwise be able to access. Our data set provides users with helpful information about the contents of their food, but it is extremely extensive, which can be overwhelming. The inclusion of a web-based interface creates greater accessibility for users who prefer a visual representation over the command-line inputs.
+	These commands benefit users in a variety of ways. First, the commands provide straightforward access to a helpful data set that users might not otherwise be able to access. Our data set provides users with helpful information about the contents of their food, but it is extremely extensive, which can be overwhelming. The data set is too large to manually search through, thus, by creating these commands, users can access the exact information they need with relative ease.
+ 
+ The inclusion of a web-based interface (Flask) creates greater accessibility for users who prefer a visual representation over the command-line inputs. This allows users to input commands into the URL and outputs a visual page that holds the information users are seeking.
     
 By providing users access to this data set, we are giving them the opportunity to alter recipes to maximize health benefits as well as be more exploratory in their food choices.
 
 ***<span style="text-decoration:underline;">Harms:</span>***
 
-As designers, we are assuming that users are seeking to alter their diet or pay extra attention to it. These very assumptions are built into our culture’s obsession with “clean eating,” dieting, altering food consumption, and overall diet culture. This culture can be helpful for some, but for others, it can be very detrimental to mental health, physical well-being, and overall wellness. Additionally, it requires some technical knowledge, which can exclude those who are unfamiliar with structured URL commands or those who are not very strong in navigating on a computer. 
+As designers, we are assuming that users are seeking to alter their diet or pay extra attention to it. These very assumptions are built into our culture’s obsession with “clean eating,” dieting, altering food consumption, and overall diet culture. This culture can be helpful for some, but for others, it can be very detrimental to mental health, physical well-being, and overall wellness. 
+
+Additionally, it requires some technical knowledge, which can exclude those who are unfamiliar with structured URL commands or those who are not very strong in navigating on a computer. 
 
 ***<span style="text-decoration:underline;">CIDER:</span>***
 
