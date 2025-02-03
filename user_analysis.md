@@ -64,7 +64,10 @@ If a user searches:
 
 
 
-* The types of cheese in this data set are: Cheese,Blue; Cheese,Brick; Cheese,Brie
+* The types of cheese in this data set are:
+* Cheese,Blue
+* Cheese,Brick
+* Cheese,Brie
 
 This command provides a comprehensive list of all types of cheese stored in the dataset.
 
