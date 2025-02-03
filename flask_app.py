@@ -39,7 +39,10 @@ def get_cell(column_name: str, row: str):
     Arguments:
     column_name : input from route
     row : input from route
+    
+    column_name is not case-sensitive
     """
+    column_name = column_name.title()
     
     # error checks
     if not row.isdigit():
@@ -49,7 +52,7 @@ def get_cell(column_name: str, row: str):
     if int(row) < 0 or int(row) >= len(dummy_data[column_name]) - 1:
         return error(f"row index out of bounds. Only use indices from 0 to {len(dummy_data[column_name])-1}.")
     
-    return dummy_data[column_name][int(row)]
+    return str(dummy_data[column_name][int(row)])
 
 @app.route("/list/<category>", strict_slashes = False)
 def get_foods(category):
