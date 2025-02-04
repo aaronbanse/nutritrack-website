@@ -36,7 +36,7 @@ def main():
             values = list(facts.values.squeeze())
             if len(values) == len(labels):
                 for i in range(len(labels)):
-                    print(labels[i][5:] + ": " + str(values[i]))
+                    print(labels[i] + ": " + str(values[i]))
             else:
                 print("No food named {} found.".format(args[1]))
                 
