@@ -12,7 +12,7 @@ class Test_homepage(unittest.TestCase):
     <h2>App Features:</h2>
     <p>
     <h3>1. Access information of a specific cell by appending the row and column of the cell you seek at the end of the browser URL above.</h3>
-    <h4>  ex. http://127.0.0.1:5000/0/0 finds row 0 and column 0.</h4>
+    <h4>  ex. http://127.0.0.1:5000/Description/2 finds row 2 and column "Description".</h4>
     <p>
     <h3>2. Access a list of the related food types in the data set by typing /list/keyword at the end of the browser URL above.</h3>
     <h4>  ex. http://127.0.0.1:5000/list/cheese to find the types of cheese in the data set.</h4>
