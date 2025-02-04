@@ -42,10 +42,10 @@ class Test_get_foods(unittest.TestCase):
             get_foods()
 
 class Test_get_nutrition(unittest.TestCase):
-    def test_get_nutrition(self):
+    def test_get_nutrition_route(self):
         self.app = app.test_client()
         response = self.app.get('/health-facts/cheese,blue', follow_redirects=True)
-        self.assertEqual(b"The nutrients included in 'Cheese,Blue' are:<br>Alpha Carotene:<br>0.0<br>Ash: 5.11<br>Beta Carotene: 74.0<br>Beta Cryptoxanthin: 0.0<br>Carbohydrate: 2.34", response.data)
+        self.assertEqual(b"The nutrients included in 'Cheese,Blue' are:<br>Alpha Carotene: 0.0<br>Ash: 5.11<br>Beta Carotene: 74.0<br>Beta Cryptoxanthin: 0.0<br>Carbohydrate: 2.34", response.data)
     def test_get_nutrition_route_edgecase(self):
         self.app = app.test_client()
         response = self.app.get('/health-facts/cheese', follow_redirects=True)
@@ -55,3 +55,21 @@ class Test_get_nutrition(unittest.TestCase):
     def test_get_nutrition_edgecase(self):
         with self.assertRaises(TypeError):
             get_nutrition()
+            
+class Test_get_cell(unittest.TestCase):
+    def test_get_cell_route(self):
+        self.app = app.test_client()
+        response = self.app.get('/Ash/2', follow_redirects=True)
+        self.assertEqual(b"0.0", response.data)
+    def test_get_cell_route_edgecase(self):
+        self.app = app.test_client()
+        response = self.app.get('/Ash/-1', follow_redirects=True)
+        self.assertEqual(b"Error: row must be an integer.", response.data)
+        self.app = app.test_client()
+        response = self.app.get('/Ashl/5', follow_redirects=True)
+        self.assertEqual(b"Error: column name \"Ashl\" not found", response.data)
+    def test_get_cell(self):
+        self.assertEqual(get_cell('Ash', "1"), "2.11")
+    def test_get_cell_edgecase(self):
+        self.assertEqual(get_cell('Description','30'), 'Error: row index out of bounds. Only use indices from 0 to 20.')
+    

@@ -44,7 +44,7 @@ class Test_command_line(unittest.TestCase):
 class Test_get_data(unittest.TestCase):
     def test_get_data(self):
         """tests the get_data function in the get_food_data file to determine that it is creating the correct DataFrame"""
-        self.assertEqual("\n".join(list(get_data(dummy=True))),"Category\nDescription\nNutrient Data Bank Number\nData.Alpha Carotene\nData.Ash\nData.Beta Carotene\nData.Beta Cryptoxanthin\nData.Carbohydrate")
+        self.assertEqual("\n".join(list(get_data(dummy=True))),"Category\nDescription\nNutrient Data Bank Number\nAlpha Carotene\nAsh\nBeta Carotene\nBeta Cryptoxanthin\nCarbohydrate")
     
     def test__typeError_get_data(self):
         """tests an edge case of the get_data function in the get_food_data file to determine that
@@ -72,7 +72,7 @@ class Test_get_data(unittest.TestCase):
     def test_health_facts(self):
         """tests the health_facts function in the get_food_data file with a CHEESE,BLUE example
         to determine that it is functional"""
-        self.assertEqual("\n".join(list(health_facts("CHEESE,BLUE"))), 'Data.Alpha Carotene\nData.Ash\nData.Beta Carotene\nData.Beta Cryptoxanthin\nData.Carbohydrate')
+        self.assertEqual("\n".join(list(health_facts("CHEESE,BLUE"))), 'Alpha Carotene\nAsh\nBeta Carotene\nBeta Cryptoxanthin\nCarbohydrate')
 
     def test_typeError_health_facts(self):
         """tests an edge case of the health_facts function in the get_food_data file to determine that
