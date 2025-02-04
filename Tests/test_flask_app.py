@@ -72,4 +72,3 @@ class Test_get_cell(unittest.TestCase):
         self.assertEqual(get_cell('Ash', "1"), "2.11")
     def test_get_cell_edgecase(self):
         self.assertEqual(get_cell('Description','30'), 'Error: row index out of bounds. Only use indices from 0 to 20.')
-    
