@@ -120,7 +120,7 @@ Users will use this command when they are looking for detailed nutritional infor
 
 ***<span style="text-decoration:underline;">“/list/&lt;category>” route:</span>***
 
-Users searching for a specific type of cheese who may need assistance in narrowing down the options and figuring out what it is called in the dataset can search for foods matching the category “CHEESE”. This ensures that users won’t have to guess what to input when trying to use the command healthfacts, only to find that their exact food name doesn’t exist in the dataset. Instead, they can search for a keyword and look for the best fit in the dataset. Users could also use this command when seeking recipe substitutes if they are unsure of what similar food types are available to them. 
+Users searching for a specific type of cheese who may need assistance in narrowing down their options and identifying the correct name in the dataset can search for foods matching the category “CHEESE.” This ensures that users won’t have to guess what to input when trying to use the **healthfacts** command, only to find that their exact food name doesn’t exist in the dataset. Instead, they can search for a keyword and find the best fit. Additionally, this functionality is beneficial for users seeking recipe substitutes, especially if they are unsure of what similar food types are available to them. Moreover, users benefit from structured, specified data access through a database rather than having to manually scan through a file-based CSV, making the search process more efficient and user-friendly.
 
 ***<span style="text-decoration:underline;">“/health-facts/&lt;description>” route</span>*:**
 
@@ -161,7 +161,9 @@ Our design assumes that:
 * Users have reliable internet access
 * Users are comfortable navigating web-based applications
 * Users understand how to input structured commands in the URL
-* users can recognize common food categorization items
+* Users can recognize common food categorization items
+* Users are searching for foods that are within the database
+* 
 
 *Imagine:*
 
