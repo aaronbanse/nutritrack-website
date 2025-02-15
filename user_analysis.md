@@ -241,3 +241,15 @@ We could consider implementing offline caching, allowing users to store data tem
 
 
 Ensure food categorization labels align with commonly used terms or we could also make a glossary of all the foods to match with which category they are in. Another possibilty would be to create a synonym-matching feature to assist users in identifying the correct search term. 
+
+<span style="text-decoration:underline;">Assumption #7:</span>
+
+We could design a food suggestion feature. Allow users to submit food items that are missing from the database, which can later be reviewed and added to improve an inclusive database.
+
+<span style="text-decoration:underline;">Assumption #7:</span>
+
+Adding a interactive tooltips pop-up box that can define complex nutritional terms. Additionally, we could offer visual aids such as color-coded indicators to represent nutrient benefits and risks (e.g., a green checkmark for beneficial nutrients, a red warning for excessive sodium)
+
+<span style="text-decoration:underline;">Assumption #8:</span>
+
+Allow users to contribute to subjective insights, such as taste ratings, preparation tips, or personal health benefits that they have noticed. We could also try to expand our types of queries to allow searches such as "Best foods for Keto" and return a list of ingredients.
