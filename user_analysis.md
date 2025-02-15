@@ -176,7 +176,7 @@ One main assumption that excludes users is that these commands are being used to
 <span style="text-decoration:underline;">Assumption #2:</span>
 
 
-Our design's second assumption is that users are familiar with Unix. To run our code, we use a module called pandas. Unfortunately, the latest version of pandas and homebrew don’t work very well together, so in order to operate our commands, users must be in a virtual environment in which pandas is installed. In order to accomplish this, users must be fairly familiar with computers, Unix, and coding, otherwise, they won’t be able to access our commands at all.
+Our design's second assumption is that users are familiar with Unix. To run our code, we use a module called pandas. Unfortunately, the latest version of pandas and homebrew don’t work very well together, so in order to operate our commands, users must be in a virtual environment in which pandas are installed. In order to accomplish this, users must be fairly familiar with computers, Unix, and coding, otherwise, they won’t be able to access our commands at all.
 
 <span style="text-decoration:underline;">Assumption #3:</span>
 
@@ -191,12 +191,12 @@ Our fourth assumption is that users are comfortable with using web-based navigat
 <span style="text-decoration:underline;">Assumption #5:</span>
 
 
-Users have stable internet access to utilize the Flask application. Those who live in areas with poor connectivity or frequent power outages may find it hard to retrieve data, therefore limiting accessibility. This is similar to those without any internet access at home, as they will have to travel somewehere that offers internet access to use our platform.
+Users have stable internet access to utilize the Flask application. Those who live in areas with poor connectivity or frequent power outages may find it hard to retrieve data, therefore limiting accessibility. This is similar to those without any internet access at home, as they will have to travel somewhere that offers internet access to use our platform.
 
 <span style="text-decoration:underline;">Assumption #6:</span>
 
     
-Users may not recognize food category labels that are used in this dataset. If the category names do not align with terminology the user is used to, users may experience difficulty finding relevant food items. This is also applicable to food items that don't belong to any category. 
+Users may not recognize food category labels that are used in this dataset. If the category names do not align with the terminology the user is used to, users may experience difficulty finding relevant food items. This is also applicable to food items that don't belong to any category. 
 
 <span style="text-decoration:underline;">Assumption #7:</span>
 
@@ -204,7 +204,7 @@ Users may be looking for an exotic food that is unlikely to be found in the data
 
 <span style="text-decoration:underline;">Assumption #7:</span>
 
-Users may not have the background in health science to understand complex terminology and vocabulary. They may not be aware of health benefits and detriments of more obscure nutrition facts that could have an impact on their bodies. Thus, this database assumes that the user has a certain degree of knowledge to understand the impact of heath facts.
+Users may not have the background in health science to understand complex terminology and vocabulary. They may not be aware of the health benefits and detriments of more obscure nutrition facts that could have an impact on their bodies. Thus, this database assumes that the user has a certain degree of knowledge to understand the impact of health facts.
 
 <span style="text-decoration:underline;">Assumption #8:</span>
 
@@ -248,7 +248,7 @@ We could design a food suggestion feature. Allow users to submit food items that
 
 <span style="text-decoration:underline;">Assumption #7:</span>
 
-Adding a interactive tooltips pop-up box that can define complex nutritional terms. Additionally, we could offer visual aids such as color-coded indicators to represent nutrient benefits and risks (e.g., a green checkmark for beneficial nutrients, a red warning for excessive sodium)
+Adding an interactive tooltip pop-up box that can define complex nutritional terms. Additionally, we could offer visual aids such as color-coded indicators to represent nutrient benefits and risks (e.g., a green checkmark for beneficial nutrients, a red warning for excessive sodium)
 
 <span style="text-decoration:underline;">Assumption #8:</span>
 
