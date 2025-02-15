@@ -31,7 +31,7 @@ class DataSource:
             cursor = self.connection.cursor()
 
             # make the query using %s as a placeholder for the variable
-            query = "SELECT Description FROM food_nutrition WHERE Category = %s;"
+            query = "SELECT \"Description\" FROM food_nutrition WHERE \"Category\" = %s;"
 
             # executing the query and saying that the type variable 
             # should be placed where %s was, the trailing comma is important!
@@ -55,7 +55,7 @@ class DataSource:
             cursor = self.connection.cursor()
 
             # make the query using %s as a placeholder for the variable
-            query = "SELECT * FROM food_nutrition WHERE Description = %s;"
+            query = "SELECT * FROM food_nutrition WHERE \"Description\" = %s;"
 
             # executing the query and saying that the type variable 
             # should be placed where %s was, the trailing comma is important!
