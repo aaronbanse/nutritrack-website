@@ -163,7 +163,8 @@ Our design assumes that:
 * Users understand how to input structured commands in the URL
 * Users can recognize common food categorization items
 * Users are searching for foods that are within the database
-* 
+* Users have the education background to understand health facts
+* Users are interested in the information provided from queries in the database
 
 *Imagine:*
 
@@ -196,6 +197,18 @@ Users have stable internet access to utilize the Flask application. Those who li
 
     
 Users may not recognize food category labels that are used in this dataset. If the category names do not align with terminology the user is used to, users may experience difficulty finding relevant food items. This is also applicable to food items that don't belong to any category. 
+
+<span style="text-decoration:underline;">Assumption #7:</span>
+
+Users may be looking for an exotic food that is unlikely to be found in the database. In this case, the user may try to look for this particular food item unsuccessfully. If the user cannot find the food item, they are unable to see the nutrition facts that they are looking for.
+
+<span style="text-decoration:underline;">Assumption #7:</span>
+
+Users may not have the background in health science to understand complex terminology and vocabulary. They may not be aware of health benefits and detriments of more obscure nutrition facts that could have an impact on their bodies. Thus, this database assumes that the user has a certain degree of knowledge to understand the impact of heath facts.
+
+<span style="text-decoration:underline;">Assumption #8:</span>
+
+Users may have more complex interests that cannot be answered by the queries provided in this database. For example, a user might be wondering if a certain food tastes good. Our database cannot answer more complex and subjective queries at this point.
 
 *Design*
 
