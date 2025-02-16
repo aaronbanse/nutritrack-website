@@ -148,7 +148,7 @@ Additionally, it requires some technical knowledge, which can exclude those who 
 Our design assumes that:
 
 
-
+Command Line:
 * Users have access to a computer
 * Users are familiar with Unix/creating a virtual environment/using pandas
 * Users have fine motor skills
@@ -158,98 +158,102 @@ Our design assumes that:
 * Users have the monetary resources necessary to afford foods and ingredients
 * Users are diet conscious/Users are seeking to change their dieting habits
 * Users have a space in which they can cook and have the means/ability to cook
+  
+Flask:
 * Users have reliable internet access
 * Users are comfortable navigating web-based applications
 * Users understand how to input structured commands in the URL
 * Users can recognize common food categorization items
+
+Database:
 * Users are searching for foods that are within the database
 * Users have the education background to understand health facts
 * Users are interested in the information provided from queries in the database
 
 *Imagine:*
 
-<span style="text-decoration:underline;">Assumption #1:</span>
+<span style="text-decoration:underline;">Command Line Assumption #1:</span>
 
 
 One main assumption that excludes users is that these commands are being used to make substitutions in recipes, and by extension, users have the financial luxury to afford substitutions, or to cook expensive foods in general. Oftentimes, fancy substitutions or complicated recipes can be extremely expensive, and thus might not be available to some users. Organic and/or unique foods are significantly more expensive than the basic version of the food, so the substitution-based design might not allow some users to engage with our design.
 
-<span style="text-decoration:underline;">Assumption #2:</span>
+<span style="text-decoration:underline;">Command Line Assumption #2:</span>
 
 
 Our design's second assumption is that users are familiar with Unix. To run our code, we use a module called pandas. Unfortunately, the latest version of pandas and homebrew don’t work very well together, so in order to operate our commands, users must be in a virtual environment in which pandas are installed. In order to accomplish this, users must be fairly familiar with computers, Unix, and coding, otherwise, they won’t be able to access our commands at all.
 
-<span style="text-decoration:underline;">Assumption #3:</span>
+<span style="text-decoration:underline;">Command Line Assumption #3:</span>
 
 
 Another assumption that our design makes is that users have a space in which they can cook. Not all users have a kitchen and appliances available, which is necessary to cook a recipe. If we assume that our users are using our design to make recipes, then if users don’t have access to a kitchen, or a stable environment in which to cook, many users likely will not be able to use our commands/have access to our design.
 
-<span style="text-decoration:underline;">Assumption #4:</span>
+<span style="text-decoration:underline;">Flask Assumption #4:</span>
 
 
 Our fourth assumption is that users are comfortable with using web-based navigation. Some users may struggle with URL-based interactions, especially when if they are unfamiliar with the structure of what to input into the URL. This can be particularly challenging for older adults, individuals with cognitive disabilities, or those who are new to this platform. 
 
-<span style="text-decoration:underline;">Assumption #5:</span>
+<span style="text-decoration:underline;">Flask Assumption #5:</span>
 
 
 Users have stable internet access to utilize the Flask application. Those who live in areas with poor connectivity or frequent power outages may find it hard to retrieve data, therefore limiting accessibility. This is similar to those without any internet access at home, as they will have to travel somewhere that offers internet access to use our platform.
 
-<span style="text-decoration:underline;">Assumption #6:</span>
+<span style="text-decoration:underline;">Flask Assumption #6:</span>
 
     
 Users may not recognize food category labels that are used in this dataset. If the category names do not align with the terminology the user is used to, users may experience difficulty finding relevant food items. This is also applicable to food items that don't belong to any category. 
 
-<span style="text-decoration:underline;">Assumption #7:</span>
+<span style="text-decoration:underline;">Database Assumption #7:</span>
 
 Users may be looking for an exotic food that is unlikely to be found in the database. In this case, the user may try to look for this particular food item unsuccessfully. If the user cannot find the food item, they are unable to see the nutrition facts that they are looking for.
 
-<span style="text-decoration:underline;">Assumption #7:</span>
+<span style="text-decoration:underline;">Database Assumption #8:</span>
 
 Users may not have the background in health science to understand complex terminology and vocabulary. They may not be aware of the health benefits and detriments of more obscure nutrition facts that could have an impact on their bodies. Thus, this database assumes that the user has a certain degree of knowledge to understand the impact of health facts.
 
-<span style="text-decoration:underline;">Assumption #8:</span>
+<span style="text-decoration:underline;">Database Assumption #9:</span>
 
 Users may have more complex interests that cannot be answered by the queries provided in this database. For example, a user might be wondering if a certain food tastes good. Our database cannot answer more complex and subjective queries at this point.
 
 *Design*
 
-<span style="text-decoration:underline;">Assumption #1:</span>
+<span style="text-decoration:underline;">Command Line Assumption #1:</span>
 
 
 This first assumption hinges on a user’s financial state. To appeal to all users, not just those with substantial financial resources, we could add the command “--cheap” or something similar that accesses a data set about the cheapest version of each ingredient type. For example, this new command might access a data set that stores information about the average price of different kinds of ingredients in different locations. By accessing “CHEESE” with the “--cheap” command, our code would pull from this data set to find the cheapest kind of cheese available, so users could make money-conscious recipe substitutions. This could allow users to use our design, even if they aren’t able to make expensive substitutions.
 
-<span style="text-decoration:underline;">Assumption #2:</span>
+<span style="text-decoration:underline;">Command Line Assumption #2:</span>
 
 
 The only reasonable redesign to make our code more available to users without significant Unix experience would be to alter our code to use another module that is more compatible with Homebrew. By doing this, users could use basic commands in Terminal to run our code, rather than having to also create a virtual environment and install pandas. Thus, even if users aren’t Unix experts, they could likely still use our simplest commands.
 
-<span style="text-decoration:underline;">Assumption #3:</span>
+<span style="text-decoration:underline;">Command Line Assumption #3:</span>
 
 
 It is difficult to fix this assumption because the assumption is embedded in the use of the design. Our model and website are both designed with cooking in mind. If users can’t cook or don’t have the resources to cook, then this design is essentially worthless to them. However, in this case, I don’t think that there is a viable solution. The very need for our design is for cooking, so, it can’t likely be redesigned in a way to include users who don’t plan on cooking. This illustrates that in some cases, some designs are designed for a specific group of users, and they can’t be modified to include all users (i.e. the universal design is limited, and thus can not *truly* be made universal).
 
-<span style="text-decoration:underline;">Assumption #4:</span>
+<span style="text-decoration:underline;">Flask Assumption #4:</span>
 
 
 A possible solution to this is to implement a more user-friendly search interface with dropdown menus, autocomplete search suggestions, or more in-depth guidelines to assist users unfamiliar with structured URL inputs. These upgrades will make the Flask interface more inclusive and user-friendly for a broader audience. 
 
-<span style="text-decoration:underline;">Assumption #5:</span>
+<span style="text-decoration:underline;">Flask Assumption #5:</span>
 
 
 We could consider implementing offline caching, allowing users to store data temporarily and retrieve it later when they regain connectivity. Additionally, providing a downloadable version of the dataset could offer an alternative way for users to access information without relying on a constant internet connection. 
 
-<span style="text-decoration:underline;">Assumption #6:</span>
+<span style="text-decoration:underline;">Flask Assumption #6:</span>
 
 
 Ensure food categorization labels align with commonly used terms or we could also make a glossary of all the foods to match with which category they are in. Another possibilty would be to create a synonym-matching feature to assist users in identifying the correct search term. 
 
-<span style="text-decoration:underline;">Assumption #7:</span>
+<span style="text-decoration:underline;">Database Assumption #7:</span>
 
 We could design a food suggestion feature. Allow users to submit food items that are missing from the database, which can later be reviewed and added to improve an inclusive database.
 
-<span style="text-decoration:underline;">Assumption #7:</span>
+<span style="text-decoration:underline;">Database Assumption #8:</span>
 
 Adding an interactive tooltip pop-up box that can define complex nutritional terms. Additionally, we could offer visual aids such as color-coded indicators to represent nutrient benefits and risks (e.g., a green checkmark for beneficial nutrients, a red warning for excessive sodium)
 
-<span style="text-decoration:underline;">Assumption #8:</span>
+<span style="text-decoration:underline;">Database Assumption #9:</span>
 
 Allow users to contribute to subjective insights, such as taste ratings, preparation tips, or personal health benefits that they have noticed. We could also try to expand our types of queries to allow searches such as "Best foods for Keto" and return a list of ingredients.
