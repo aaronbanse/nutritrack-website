@@ -1,7 +1,7 @@
 from flask_app import *
 import unittest
 
-class Test_homepage(unittest.TestCase):
+class Test_Homepage(unittest.TestCase):
     def test_homepage_route(self):
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
@@ -26,7 +26,7 @@ class Test_homepage(unittest.TestCase):
     <h3>Take a look at (and maybe copy) your URL now so that you can come back to the homepage if you need to!</h3>
     """, response.data)
 
-class Test_get_foods(unittest.TestCase):
+class Test_Get_Foods(unittest.TestCase):
     def test_get_food_route(self):
         self.app = app.test_client()
         response = self.app.get('/list/cheese', follow_redirects=True)
@@ -41,7 +41,7 @@ class Test_get_foods(unittest.TestCase):
         with self.assertRaises(TypeError):
             get_foods()
 
-class Test_get_nutrition(unittest.TestCase):
+class Test_Get_Nutrition(unittest.TestCase):
     def test_get_nutrition_route(self):
         self.app = app.test_client()
         response = self.app.get('/health-facts/cheese,blue', follow_redirects=True)
@@ -55,7 +55,8 @@ class Test_get_nutrition(unittest.TestCase):
     def test_get_nutrition_edgecase(self):
         with self.assertRaises(TypeError):
             get_nutrition()
-            
+
+'''      
 class Test_get_cell(unittest.TestCase):
     def test_get_cell_route(self):
         self.app = app.test_client()
@@ -72,3 +73,4 @@ class Test_get_cell(unittest.TestCase):
         self.assertEqual(get_cell('Ash', "1"), "2.11")
     def test_get_cell_edgecase(self):
         self.assertEqual(get_cell('Description','30'), 'Error: row index out of bounds. Only use indices from 0 to 20.')
+'''

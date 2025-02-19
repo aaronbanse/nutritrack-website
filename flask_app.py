@@ -1,9 +1,8 @@
 from flask import Flask, render_template
-import pandas
-from ProductionCode.get_food_data import fetch_category, health_facts, get_data, error
+from ProductionCode.datasource import DataSource
 
-# get dummy data as a pandas dataframe
-dummy_data = get_data(dummy=True)
+# dataset accessor
+ds = DataSource()
 
 app = Flask(__name__)
 
@@ -31,20 +30,20 @@ def homepage():
     <h3>Take a look at (and maybe copy) your URL now so that you can come back to the homepage if you need to!</h3>
     """
 
+"""
 @app.route("/<column_name>/<row>", strict_slashes = False)
 def get_cell(column_name: str, row: str):
-    """
-    Accesses the information of a specific cell from an input column name and row.
+    # Accesses the information of a specific cell from an input column name and row.
     
-    Arguments:
-    column_name : input from route
-    row : input from route
+    # Arguments:
+    # column_name : input from route
+    # row : input from route
     
-    column_name is not case-sensitive
-    """
-    column_name = column_name.title()
+    # column_name is not case-sensitive
     
-    # error checks
+    # column_name = column_name.title()
+    
+    # error checkss
     if not row.isdigit():
         return error("row must be an integer.")
     if column_name not in dummy_data.columns:
@@ -53,6 +52,7 @@ def get_cell(column_name: str, row: str):
         return error(f"row index out of bounds. Only use indices from 0 to {len(dummy_data[column_name])-1}.")
     
     return str(dummy_data[column_name][int(row)])
+"""
 
 @app.route("/list/<category>", strict_slashes = False)
 def get_foods(category):
@@ -64,13 +64,13 @@ def get_foods(category):
     """
     
     category = category.upper() # format for search
-    items = list(fetch_category(category))
+    items = ds.fromCategoryGetTypes(category=category)
     
     category = category.lower() # format for printing
-    if len(items) == 0:
-        return ("The category '" + category + "' is not in the data set.")
-    else:
+    if len(items) > 0:
         return ("The types of " + category + " in this data set are:<br>" + "<br>".join([item.title() for item in items]))
+    else:
+        return ("The category '" + category + "' is not in the data set.")
 
 @app.route("/health-facts/<description>", strict_slashes = False)
 def get_nutrition(description):
@@ -81,13 +81,12 @@ def get_nutrition(description):
     description : input from route, specific food type
     """
     description = description.upper()
-    facts = health_facts(description)
-    labels = list(facts.columns)
-    values = list(facts.values.squeeze())
+    labels, data = ds.fromDescriptionGetNutrition(description=description)
+    
     food_info = []
-    if len(values) == len(labels):
+    if len(data) > 0:
         for i in range(len(labels)):
-            food_info.append(str(labels[i] + ": " + str(values[i]))) #formatting retrieved from command_line.py
+            food_info.append(str(labels[i] + ": " + str(data[i])))
         return ("The nutrients included in '" + description.title() + "' are:<br>" + "<br>".join(food_info))
     else:
         return ("The food named '" + description.title() + "' is not in the data set. Would you like to search again?")

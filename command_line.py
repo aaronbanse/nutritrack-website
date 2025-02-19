@@ -12,9 +12,10 @@ Currently implemented commands:
 '''
 
 import sys
-from ProductionCode.get_food_data import fetch_category, health_facts
+from ProductionCode.datasource import DataSource
 
 def main():
+    ds = DataSource()
     args=sys.argv[1:]
 
     # parse arguments
@@ -24,19 +25,18 @@ def main():
         if len(args) < 2:
             print("No category given")
         else:
-            items = list(fetch_category(args[1]))
+            category = args[1]
+            items = ds.fromCategoryGetTypes(category=category)
             for item in items:
                 print(item)
     elif args[0] == "--healthfacts":
         if len(args) < 2:
             print("No description given")
         else:
-            facts = health_facts(args[1])
-            labels = list(facts.columns)
-            values = list(facts.values.squeeze())
-            if len(values) == len(labels):
+            labels, data = ds.fromDescriptionGetNutrition(args[1])
+            if len(data) > 0:
                 for i in range(len(labels)):
-                    print(labels[i] + ": " + str(values[i]))
+                    print(labels[i] + ": " + data[i])
             else:
                 print("No food named {} found.".format(args[1]))
                 

@@ -1,5 +1,6 @@
 import psycopg2
 import ProductionCode.psqlConfig as config
+import numpy as np
 
 class DataSource:
 
@@ -30,17 +31,15 @@ class DataSource:
             # set up a cursor
             cursor = self.connection.cursor()
 
-            # make the query using %s as a placeholder for the variable
             query = "SELECT \"Description\" FROM food_nutrition WHERE \"Category\" = %s;"
-
-            # executing the query and saying that the type variable 
-            # should be placed where %s was, the trailing comma is important!
             cursor.execute(query, (category,))
-            print(cursor.fetchall())
+            # use np to squeeze
+            descriptions = np.array(cursor.fetchall()).squeeze(1)
+            
+            return list(descriptions)
 
         except Exception as e:
-            print ("Something went wrong when executing the query: ", e)
-            return None
+            return  []
         
     def fromDescriptionGetNutrition(self, description):
         '''
@@ -53,15 +52,17 @@ class DataSource:
         try:
             # set up a cursor
             cursor = self.connection.cursor()
+            
+            data_query = "SELECT * FROM food_nutrition WHERE \"Description\" = %s;"
+            columns_query = "SELECT column_name FROM information_schema.columns WHERE table_name = 'food_nutrition';"
 
-            # make the query using %s as a placeholder for the variable
-            query = "SELECT * FROM food_nutrition WHERE \"Description\" = %s;"
-
-            # executing the query and saying that the type variable 
-            # should be placed where %s was, the trailing comma is important!
-            cursor.execute(query, (description,))
-            print(cursor.fetchall())
+            # use np to squeeze
+            cursor.execute(columns_query)
+            labels = np.array(cursor.fetchall()).squeeze(1)[3:]
+            cursor.execute(data_query, (description,))
+            data = np.array(cursor.fetchall()).squeeze(0)[3:]
+            
+            return list(labels), list(data)
 
         except Exception as e:
-            print ("Something went wrong when executing the query: ", e)
-            return None
+            return [],[]

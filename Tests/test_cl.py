@@ -3,7 +3,7 @@ import subprocess
 from command_line import *
 from ProductionCode.get_food_data import *
 
-class Test_command_line(unittest.TestCase):
+class Test_Command_Line(unittest.TestCase):
     def test_main_command_line_list(self):
         """tests the command_line file --list function to determine if it is functional"""
         cmd = ["python3", "-u", "command_line.py", "--list", "CHEESE"]
@@ -41,7 +41,7 @@ class Test_command_line(unittest.TestCase):
         code.terminate()
 
 
-class Test_get_data(unittest.TestCase):
+class Test_Get_Data(unittest.TestCase):
     def test_get_data(self):
         """tests the get_data function in the get_food_data file to determine that it is creating the correct DataFrame"""
         self.assertEqual("\n".join(list(get_data(dummy=True))),"Category\nDescription\nNutrient Data Bank Number\nAlpha Carotene\nAsh\nBeta Carotene\nBeta Cryptoxanthin\nCarbohydrate")
