@@ -9,9 +9,6 @@ __pycache__/
 # Mac stuff
 .DS_Store
 
-# database stuff
-psqlConfig.py
-
 # Distribution / packaging
 .Python
 build/
