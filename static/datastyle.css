@@ -36,7 +36,9 @@ nav li a:hover {
 }
 body {
     height: 125vh;
-    background-image: url("https://images.rawpixel.com/image_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg1OTM3MTMtaW1hZ2Utam9iNjMwLWZfMS1sMGcwOGE5ei5qcGc.jpg");
+    /*background-image: url("https://images.rawpixel.com/image_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg1OTM3MTMtaW1hZ2Utam9iNjMwLWZfMS1sMGcwOGE5ei5qcGc.jpg");
+    */
+    background-color: #b8f288;
     background-size: cover;
     font-family: sans-serif;
     margin-top: 80px;
