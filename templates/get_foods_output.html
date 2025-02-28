@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/datastyle.css"/>
+        <title>Food search</title>
+    </head>
+    <body>
+        <h3><a href="/">Home</a></h3>
+        {% if succeeded %}
+            <p>
+                The types of {{category}} in this data set are:
+            </p>
+            <ul>
+                {% for item in items%}
+                    <li><a href="{{'/health-facts/' + item}}">{{item}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>The category '{{category}}' is not in the data set.</p>
+        {% endif %}
+    </body>
+</html>

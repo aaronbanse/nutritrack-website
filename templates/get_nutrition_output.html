@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/datastyle.css"/>
+        <title>Nutrition search</title>
+    </head>
+    <body>
+        <h3><a href="/">Home</a></h3>
+        {% if succeeded %}
+            <p>
+                The nutrients included in '{{description}}' are:
+            </p>
+            <ul>
+                {% for item in items%}
+                    <li>{{item[0]}}: {{item[1]}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>The food named '{{description}}' is not in the data set. Would you like to search again?</p>
+        {% endif %}
+    </body>
+</html>

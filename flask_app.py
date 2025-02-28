@@ -32,26 +32,10 @@ def get_foods(category):
     items = ds.fromCategoryGetTypes(category=category)
     
     category = category.lower() # format for printing
-    out_str = ""
     if len(items) > 0:
-        item_strs = [f"<a href=\"/health-facts/{item}\">{item.title()}</a>" for item in items]
-        out_str = f"The types of {category} in this data set are:<br>{'<br>'.join(item_strs)}"
+        return render_template("get_foods_output.html",items=items,category=category, succeeded=True)
     else:
-        out_str = f"The category '{category}' is not in the data set."
-        
-    return f"""
-        <html>
-        <head>
-        <link rel="stylesheet" href="../static/datastyle.css"/>
-        <title>Food search</title>
-        </head>
-        <body>
-        <h3><a href=\"/\">Home</a></h3>
-        <p>
-        {out_str}
-        </p>
-        </body>
-        </html>"""
+        return render_template("get_foods_output.html",items=items,category=category,succeeded=False)
 
 @app.route("/health-facts/<description>", strict_slashes = False)
 def get_nutrition(description):
@@ -64,32 +48,14 @@ def get_nutrition(description):
     description = description.upper()
     labels, data = ds.fromDescriptionGetNutrition(description=description)
     
-    food_info = []
-    out_str = ""
     if len(data) > 0:
-        for i in range(len(labels)):
-            food_info.append(str(labels[i] + ": " + str(data[i])))
-        out_str = f"The nutrients included in '{description.title()}' are:<br>{'<br>'.join(food_info)}" 
+        return render_template("get_nutrition_output.html", description=description.title(),items = zip(labels,data), succeeded=True)
     else:
-        out_str = f"The food named '{description.title()}' is not in the data set. Would you like to search again?"
-    
-    return f"""
-        <html>
-        <head>
-        <link rel="stylesheet" href="../static/datastyle.css"/>
-        <title>Food nutrition search</title>
-        </head>
-        <body>
-        <h3><a href=\"/\">Home</a></h3>
-        <p>
-        {out_str}
-        </p>
-        </body>
-        </html>"""
+        return render_template("get_nutrition_output.html", description=description.title(),items = [], succeeded=False)
 
 @app.errorhandler(404)
 def page_not_found(e):
    return "Page not found. Please paste the homepage URL into your browser for instructions on how to operate this app."
 
 if __name__== "__main__":
-   app.run(debug=True)
+   app.run(debug=True, port=5600)
