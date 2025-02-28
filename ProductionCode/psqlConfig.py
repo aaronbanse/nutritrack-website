@@ -1,3 +1,3 @@
-database = 'food_nutrition'
+database = 'amazooglesoft'
 user = 'amazooglesoft'
 password = 'phone492spam'
