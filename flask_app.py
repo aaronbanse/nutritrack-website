@@ -55,7 +55,7 @@ def get_nutrition(description):
 
 @app.errorhandler(404)
 def page_not_found(e):
-   return "Page not found. Please paste the homepage URL into your browser for instructions on how to operate this app."
+   return render_template("error.html")
 
 if __name__== "__main__":
    app.run(debug=True, port=5600)
