@@ -6,7 +6,6 @@ ds = DataSource()
 
 app = Flask(__name__)
 
-# I am not familiar with HTML, so this is based on a few minutes of internet surfing... I assume we learn a bit more later in the course :)
 @app.route("/")
 def homepage():
     return render_template("index.html")
