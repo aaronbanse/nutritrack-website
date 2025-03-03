@@ -6,7 +6,7 @@
     <body>
         <header>
             <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yNTUuanBn.jpg">
-            <h1>Nutritrack</h1>
+            <h1><a href="/"> Nutritrack</a></h1>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -14,7 +14,7 @@
                     <li><a href="/recipes/">Recipes</a></li>
                 </ul>
             </nav>
-         </header>
+        </header>
         <main>
             <div class = "return">
                 <div class="subtitle"><h2>Nutritional Information for '{{description}}':</h2></div>
@@ -27,7 +27,7 @@
                                 {% endfor %}
                             </ul>
                     {% else %}
-                        <p>The food named '{{description}}' is not in the data set. Would you like to search again?</p>
+                        <h3>The food named '{{description}}' is not in the data set.</h3>
                     {% endif %}
                 </div>
             </div>
