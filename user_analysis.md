@@ -170,6 +170,10 @@ Database:
 * Users have the education background to understand health facts
 * Users are interested in the information provided from queries in the database
 
+Front End:
+* Users can perceive changes in color
+* Users do not have sensitive eyes that could be strained by bright colors
+
 *Imagine:*
 
 <span style="text-decoration:underline;">Command Line Assumption #1:</span>
@@ -214,6 +218,14 @@ Users may not have the background in health science to understand complex termin
 
 Users may have more complex interests that cannot be answered by the queries provided in this database. For example, a user might be wondering if a certain food tastes good. Our database cannot answer more complex and subjective queries at this point.
 
+<span style="text-decoration:underline;">Front End Assumption #10:</span>
+
+Users may not be able to perceive changes in color on the website. This is important as many features of the website will change color when hovering over them. One example of this is the links on the navigation bar that turn green when the cursor hovers over them.
+
+<span style="text-decoration:underline;">Front End Assumption #11:</span>
+
+Users with sensitive eyes may find that the light green colors are too bright for their eyes. They may need to use the website and find the colors too bright to have a pleasant experience.
+
 *Design*
 
 <span style="text-decoration:underline;">Command Line Assumption #1:</span>
@@ -257,3 +269,11 @@ Adding an interactive tooltip pop-up box that can define complex nutritional ter
 <span style="text-decoration:underline;">Database Assumption #9:</span>
 
 Allow users to contribute to subjective insights, such as taste ratings, preparation tips, or personal health benefits that they have noticed. We could also try to expand our types of queries to allow searches such as "Best foods for Keto" and return a list of ingredients.
+
+<span style="text-decoration:underline;">Front End Assumption #10:</span>
+
+It would be difficult to fix this issue entirely, but it would be possible to choose colors that are in enough contrast to overcome common types of colorblindness. If the user is completely unable to see text, a possible solution that would be difficult to implement would be to include text to speech alternatives.
+
+<span style="text-decoration:underline;">Front End Assumption #11:</span>
+
+To help with this issue, colors could be chosen that are easier on the eyes. However, individual preferences are too varied to ensure that all users have an optimal experience with the website.
