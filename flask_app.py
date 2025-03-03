@@ -11,13 +11,13 @@ app = Flask(__name__)
 def homepage():
     return render_template("index.html")
 
-@app.route("/list/", strict_slashes = False)
+@app.route("/nutrients/", strict_slashes = False)
 def get_foods_instructions():
-    return render_template("get_foods_instructions.html")
+    return render_template("nutrient_facts.html")
 
-@app.route("/health-facts/", strict_slashes = False)
+@app.route("/recipes/", strict_slashes = False)
 def get_nutrition_instructions():
-    return render_template("get_nutrition_instructions.html")
+    return render_template("recipes.html")
 
 @app.route("/list/<category>", strict_slashes = False)
 def get_foods(category):
@@ -31,7 +31,7 @@ def get_foods(category):
     category = category.upper() # format for search
     items = ds.fromCategoryGetTypes(category=category)
     
-    category = category.lower() # format for printing
+    category = category.title() # format for printing
     if len(items) > 0:
         return render_template("get_foods_output.html",items=items,category=category, succeeded=True)
     else:

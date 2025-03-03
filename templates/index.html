@@ -1,31 +1,50 @@
 <!DOCTYPE html>
-<html> 
+<html>
     <head>
         <title>Home</title>
-        <link rel="stylesheet" href="../static/datastyle.css">
+        <link rel="stylesheet" href="../static/homepage.css">
     </head>
     <body>
         <header>
             <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yNTUuanBn.jpg">
             <h1>Nutritrack</h1>
             <nav>
-                 <ul>
-                     <li><a href="/">Home</a></li>
-                     <li><a href="/list/">Food Search</a></li>
-                     <li><a href="/health-facts/">Nutrition Facts</a></li>
-                 </ul>
-             </nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/nutrients/">Nutrient Information</a></li>
+                    <li><a href="/recipes/">Recipes</a></li>
+                </ul>
+            </nav>
          </header>
-         <main>
-            <p><h1>NUTRITRACK</h1></p>
+        <main>
+            <div class = "title"><h1><mark>Nutritrack</mark></h1></div>
+            <div class = "subtitle"><h2>Welcome to Nutritrack</h2></div>
+            <div class = "info">
+                <h3>What Can Nutritrack Do For You?</h3>
+                <p>Maximize a meal experience</p>
+                <p>Aid in informed recipe substitutions</p>
+                <p>Track nutrient information</p>
+                <h3>Search The Database Below</h3>
+            </div>
+            <br>
+            <div class = "input-form">
+                <form id="categoryForm" method="get">
+                    <label for="category"><h2>Enter A Category of Food:</h2></label>
+                    <input class="text" type="text" id="categoryInput" name="category" placeholder="Enter a food, ie cheese...">
+                    <input class="submit" type="submit" value="Submit">
+                </form>
+                <!-- Retrieved from https://www.w3schools.com/tags/tag_script.asp -->
+                <script>
+                    document.getElementById('categoryForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        var categoryInput = document.getElementById('categoryInput').value;
+                        window.location.href = '/list/' + categoryInput;
+                    });
+                </script>
+                <br>
+            </div>
+            <br>
+            <br>
         </main>
-        <div>
-            <h2>Find food items in the database</h2>
-            <p>Use this feature first to narrow down your search. Enter a food category like cheese, milk, or egg to find specific food items.</p>
-        </div>
-        <div>
-            <h2>Find nutrition info for foods</h2>
-            <p>Once you find the food item you want, you can search it up using "/health-facts/" to find the nutrition facts for that food.</p>
-        </div>
     </body>
 </html>

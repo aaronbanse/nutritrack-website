@@ -1,21 +1,52 @@
 <html>
     <head>
-        <link rel="stylesheet" href="../static/datastyle.css"/>
-        <title>Nutrition search</title>
+        <link rel="stylesheet" href="../static/outpages.css"/>
+        <title>{{description}}</title>
     </head>
     <body>
-        <h3><a href="/">Home</a></h3>
-        {% if succeeded %}
-            <p>
-                The nutrients included in '{{description}}' are:
-            </p>
-            <ul>
-                {% for item in items%}
-                    <li>{{item[0]}}: {{item[1]}}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>The food named '{{description}}' is not in the data set. Would you like to search again?</p>
-        {% endif %}
+        <header>
+            <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yNTUuanBn.jpg">
+            <h1>Nutritrack</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/nutrients/">Nutrient Information</a></li>
+                    <li><a href="/recipes/">Recipes</a></li>
+                </ul>
+            </nav>
+         </header>
+        <main>
+            <div class = "return">
+                <div class="subtitle"><h2>Nutritional Information for '{{description}}':</h2></div>
+                <div class="info">
+                    {% if succeeded %}
+                        <h3>The Nutrients in {{description}} Are:</h3>
+                            <ul>
+                                {% for item in items%}
+                                    <li>{{item[0]}}: {{item[1]}}</li>
+                                {% endfor %}
+                            </ul>
+                    {% else %}
+                        <p>The food named '{{description}}' is not in the data set. Would you like to search again?</p>
+                    {% endif %}
+                </div>
+            </div>
+            <br>
+            <div class = "input-form">
+                <form id="categoryForm" method="get">
+                    <label for="category"><h2>Search again?</h2></label>
+                    <input class="text" type="text" id="categoryInput" name="category" placeholder="Enter a food, ie cheese...">
+                    <input class="submit" type="submit" value="Submit">
+                </form>
+                <!-- Retrieved from https://www.w3schools.com/tags/tag_script.asp -->
+                <script>
+                    document.getElementById('categoryForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        var categoryInput = document.getElementById('categoryInput').value;
+                        window.location.href = '/list/' + categoryInput;
+                    });
+                </script>
+            </div>
+        </main>
     </body>
 </html>
