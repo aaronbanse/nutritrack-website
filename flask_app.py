@@ -12,12 +12,16 @@ def homepage():
     return render_template("index.html")
 
 @app.route("/nutrients/", strict_slashes = False)
-def get_foods_instructions():
+def get_nutrient_facts():
     return render_template("nutrient_facts.html")
 
 @app.route("/recipes/", strict_slashes = False)
-def get_nutrition_instructions():
+def get_recipes():
     return render_template("recipes.html")
+
+@app.route("/food-search/", strict_slashes = False)
+def get_food_search():
+    return render_template("food_search.html")
 
 @app.route("/list/<category>", strict_slashes = False)
 def get_foods(category):
@@ -58,4 +62,4 @@ def page_not_found(e):
    return render_template("error.html")
 
 if __name__== "__main__":
-   app.run(debug=True, port=5600)
+   app.run(debug=True, port=5139)
