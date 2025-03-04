@@ -1,7 +1,23 @@
 <html>
     <head>
-        <link rel="stylesheet" href="../static/outpages.css"/>
-        <title>Food search</title>
+        <link rel="stylesheet" href="../static/homepage.css"/>
+        <title>Food Search</title>
+        <!-- Retrieved From https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show -->
+        <script>
+            function display(clickedButton) {
+                var buttonStatus = document.getElementById(clickedButton);
+                if (buttonStatus.style.display === "block") {
+                    buttonStatus.style.display = "none";
+                } else {
+                    buttonStatus.style.display = "block";
+                }
+            }
+        </script>
+        <style>
+            #majorNutrients, #fats, #householdWeights, #minerals, #vitamins {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -11,8 +27,101 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/nutrients/">Nutrient Information</a></li>
-                    <li><a href="/recipes/">Recipes</a></li>
                     <li><a href="/food-search/">Food Search</a></li>
                 </ul>
             </nav>
         </header>
+        <main>
+            <div class = "title" style="background-image: url('https://freerangestock.com/sample/166038/fresh-ingredients-for-healthy-cooking-on-white.jpg');"><mark>Nutrient Information</mark></div>
+            <br>
+            <div class = "dropdown">
+                <button class = "bigButton" onclick="display('majorNutrients')">Major Nutrients</button>
+                    <div id="majorNutrients">
+                        <ul>
+                            <li><b>Alpha Carotene:</b> A type of antioxidant that supports immune function and skin health.</li>
+                            <li><b>Beta Carotene:</b> A precursor to vitamin A, supports vision, skin health, and immune function.</li>
+                            <li><b>Ash:</b> Represents the total mineral content in food.</li>
+                            <li><b>Beta Cryptoxanthin:</b> An antioxidant and provitamin A carotenoid that supports immune health.</li>
+                            <li><b>Carbohydrate:</b> A macronutrient that provides energy for bodily functions.</li>
+                            <li><b>Cholesterol:</b> A lipid needed for cell membranes and hormone production, but excess can lead to health issues.</li>
+                            <li><b>Choline:</b> Essential for brain development, liver function, and metabolism.</li>
+                            <li><b>Fiber:</b> Supports digestion, heart health, and blood sugar regulation.</li>
+                            <li><b>Kilocalories:</b> Measure of energy provided by food.</li>
+                            <li><b>Lutein and Zeaxanthin:</b> Antioxidants that support eye health and reduce the risk of macular degeneration.</li>
+                            <li><b>Lycopene:</b> An antioxidant found in tomatoes, supports heart health and may reduce cancer risk.</li>
+                            <li><b>Manganese:</b> A mineral important for metabolism, bone formation, and antioxidant function.</li>
+                            <li><b>Niacin (Vitamin B3):</b> Supports energy metabolism, skin health, and nervous system function.</li>
+                            <li><b>Pantothenic Acid (Vitamin B5):</b> Aids in energy production and hormone synthesis.</li>
+                            <li><b>Protein:</b> Essential for muscle growth, repair, and overall body function.</li>
+                            <li><b>Refuse Percentage:</b> The proportion of a food item that is inedible or discarded.</li>
+                            <li><b>Retinol:</b> A form of vitamin A essential for vision, skin health, and immunity.</li>
+                            <li><b>Riboflavin (Vitamin B2):</b> Supports energy production and cell function.</li>
+                            <li><b>Selenium:</b> A mineral that plays a role in thyroid function and antioxidant defense.</li>
+                            <li><b>Sugar (Total):</b> A source of quick energy, but excessive intake can lead to health issues.</li>
+                            <li><b>Thiamin (Vitamin B1):</b> Supports energy metabolism and nervous system health.</li>
+                            <li><b>Water:</b> Essential for hydration, temperature regulation, and overall body function.</li>
+                        </ul>
+                        <button class = "closeButton" onclick="display('majorNutrients')">Close</button>
+                    </div>
+                    <br>
+            </div>
+            <div class = "dropdown">
+                <button class = "bigButton" onclick="display('fats')">Fats</button>
+                    <div id="fats">
+                        <ul>
+                            <li><b>Monounsaturated Fat:</b> Healthy fats that support heart health and reduce inflammation.</li>
+                            <li><b>Polyunsaturated Fat:</b> Essential fats, including omega-3 and omega-6, that support brain and heart health.</li>
+                            <li><b>Saturated Fat:</b> A type of fat that should be consumed in moderation to maintain heart health.</li>
+                            <li><b>Total Lipid (Fat):</b> Includes all fat types, providing energy and supporting cell function.</li>
+                        </ul>
+                        <button class = "closeButton" onclick="display('fats')">Close</button>
+                    </div>
+                    <br>
+            </div>
+            <div class = "dropdown">
+                <button class = "bigButton" onclick="display('householdWeights')">Household Weights</button>
+                    <div id="householdWeights">
+                        <ul>
+                            <li><b>1st Household Weight:</b> The weight of a typical serving size.</li>
+                            <li><b>1st Household Weight Description:</b> A description of the first household weight measurement.</li>
+                            <li><b>2nd Household Weight:</b> Another measurement of a typical serving size.</li>
+                            <li><b>2nd Household Weight Description:</b> A description of the second household weight measurement.</li>
+                        </ul>
+                        <button class = "closeButton" onclick="display('householdWeights')">Close</button>
+                    </div>
+                    <br>
+            </div>
+            <div class = "dropdown">
+                <button class = "bigButton" onclick="display('minerals')">Minerals</button>
+                    <div id="minerals">
+                        <ul>
+                            <li><b>Calcium:</b> Important for strong bones, teeth, and muscle function.</li>
+                            <li><b>Copper:</b> Supports iron metabolism and immune function.</li>
+                            <li><b>Iron:</b> Essential for oxygen transport in blood and energy production.</li>
+                            <li><b>Magnesium:</b> Supports muscle function, nerve transmission, and heart health.</li>
+                            <li><b>Phosphorus:</b> Important for bone health and energy production.</li>
+                            <li><b>Potassium:</b> Helps regulate fluid balance, muscle contractions, and heart function.</li>
+                            <li><b>Sodium:</b> Regulates fluid balance and nerve function but should be consumed in moderation.</li>
+                            <li><b>Zinc:</b> Supports immune function, wound healing, and DNA synthesis.</li>
+                        </ul>
+                        <button class = "closeButton" onclick="display('minerals')">Close</button>
+                    </div>
+                    <br>
+            </div>
+            <div class = "dropdown">
+                <button class = "bigButton" onclick="display('vitamins')">Vitamins</button>
+                    <div id="vitamins">
+                        <ul>
+                            <li><b>Vitamin A (IU):</b> Supports vision, immune function, and skin health.</li>
+                            <li><b>Vitamin A (RAE):</b> Supports vision, immune function, and skin health.</li>
+                            <li><b>Vitamin B12:</b> Essential for nerve function, red blood cell formation, and DNA production.</li>
+                            <li><b>Vitamin B6:</b> Helps with brain development, metabolism, and immune function.</li>
+                            <li><b>Vitamin C:</b> An antioxidant that supports immunity, skin health, and wound healing.</li>
+                            <li><b>Vitamin E:</b> An antioxidant that protects cells from damage and supports skin health.</li>
+                            <li><b>Vitamin K:</b> Essential for blood clotting and bone health.</li>
+                        </ul>
+                        <button class = "closeButton" onclick="display('vitamins')">Close</button>
+                    </div>
+                    <br>
+            </div>
+        </main>

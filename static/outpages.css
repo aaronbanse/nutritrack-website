@@ -66,6 +66,15 @@ body {
     text-align: center;
     padding: 10px;
 }
+.info a{
+    color:#6A994E;
+}
+.info a:hover{
+    color:#A7C957;
+}
+.info a:active{
+    color:#BC4749;
+}
 .info ul li {
     list-style-type: none;
     text-align: center;

@@ -59,6 +59,11 @@ body {
     padding-top: 250px;
     padding-bottom: 250px;
 }
+.title mark{
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #386641;
+    padding: 10px;
+}
 .title h1 mark{
     background-color: rgba(255, 255, 255, 0.9);
     color: #386641;
@@ -137,4 +142,59 @@ input[type=submit]:hover {
 }
 .end-space{
     padding: 10%;
+}
+
+/* Buttons */
+.bigButton{
+    background: none;
+    border: none;
+    margin: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background-color: #386641;
+    width: 100%;
+    font-size: 3vw;
+    text-align: left;
+    text-indent: 1%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: #F2E8CF;
+}
+.bigButton:hover {
+    color: #A7C957;
+}
+.bigButton:active {
+    color: #6A994E;
+}
+.dropdown ul {
+    color: #386641;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2vw;
+    text-align: left;
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.closeButton {
+    background-color: gray;
+    cursor: pointer;
+    width: 15%;
+    margin: auto;
+    margin-left: 42.5%;
+    font-size: 1.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#F2E8CF;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+.closeButton:hover {
+    color: #A7C957;
+}
+.closeButton:active {
+    color: #6A994E;
 }

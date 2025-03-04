@@ -14,10 +14,6 @@ def homepage():
 def get_nutrient_facts():
     return render_template("nutrient_facts.html")
 
-@app.route("/recipes/", strict_slashes = False)
-def get_recipes():
-    return render_template("recipes.html")
-
 @app.route("/food-search/", strict_slashes = False)
 def get_food_search():
     return render_template("food_search.html")
@@ -61,4 +57,4 @@ def page_not_found(e):
    return render_template("error.html")
 
 if __name__== "__main__":
-   app.run(debug=True, port=5139)
+   app.run(debug=True, port=5600)
