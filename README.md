@@ -5,6 +5,16 @@ Nora\
 Nathan\
 Aaron
 
+# Nutritrack Overview
+Our website is designed to allow users to search nutritional facts about certain types of foods that they are interested in.
+
+### Features
+* Scanability: Our website is structured for easy reading. There are clear buttons in our navigation bar that clearly state what users may be looking for. Additionally, our website has very clear color blocks, so users can clearly see where the different sections are.
+
+* Satisficing: Users can quickly find what they need with intuitive navigation and the website is also visually pleasing without too much clutter.
+
+* Muddling Through: The design ensures that users can explore our website without any strict guidance. There are also instructions that may be followed, but not necessary.
+
 # Command Line Interface
 ### Basic Usage Examples
 
