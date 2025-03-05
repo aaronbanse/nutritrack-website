@@ -144,6 +144,37 @@ input[type=submit]:hover {
     padding: 10%;
 }
 
+/* Arrows */
+.arrow {
+    border: solid #F2E8CF;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 11px;
+}
+.arrow:hover {
+    border: solid #A7C957;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 11px;
+}
+.arrow:active {
+    border: solid #6A994E;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 11px;
+}
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: 5px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-bottom: 5px;
+    margin-left: 8px;
+}
+
 /* Buttons */
 .bigButton{
     background: none;
@@ -160,12 +191,6 @@ input[type=submit]:hover {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bolder;
     color: #F2E8CF;
-}
-.bigButton:hover {
-    color: #A7C957;
-}
-.bigButton:active {
-    color: #6A994E;
 }
 .dropdown ul {
     color: #386641;
