@@ -4,12 +4,15 @@
         <title>Food Search</title>
         <!-- Retrieved From https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show -->
         <script>
-            function display(clickedButton) {
+            function display(clickedButton, clickedArrow) {
                 var buttonStatus = document.getElementById(clickedButton);
+                var arrowStatus = document.getElementById(clickedArrow);
                 if (buttonStatus.style.display === "block") {
                     buttonStatus.style.display = "none";
+                    arrowStatus.className = "arrow right";
                 } else {
                     buttonStatus.style.display = "block";
+                    arrowStatus.className = "arrow down";
                 }
             }
         </script>
@@ -35,7 +38,7 @@
             <div class = "title" style="background-image: url('https://freerangestock.com/sample/166038/fresh-ingredients-for-healthy-cooking-on-white.jpg');"><mark>Nutrient Information</mark></div>
             <br>
             <div class = "dropdown">
-                <button class = "bigButton" onclick="display('majorNutrients')">Major Nutrients</button>
+                <button class = "bigButton" onclick="display('majorNutrients', 'majNutArrow')">Major Nutrients <i id="majNutArrow" class="arrow right"></i></button>
                     <div id="majorNutrients">
                         <ul>
                             <li><b>Alpha Carotene:</b> A type of antioxidant that supports immune function and skin health.</li>
@@ -61,12 +64,12 @@
                             <li><b>Thiamin (Vitamin B1):</b> Supports energy metabolism and nervous system health.</li>
                             <li><b>Water:</b> Essential for hydration, temperature regulation, and overall body function.</li>
                         </ul>
-                        <button class = "closeButton" onclick="display('majorNutrients')">Close</button>
+                        <button class = "closeButton" onclick="display('majorNutrients','majNutArrow')">Close</button>
                     </div>
                     <br>
             </div>
             <div class = "dropdown">
-                <button class = "bigButton" onclick="display('fats')">Fats</button>
+                <button class = "bigButton" onclick="display('fats', 'fatsArrow')">Fats <i id="fatsArrow" class="arrow right"></i></button>
                     <div id="fats">
                         <ul>
                             <li><b>Monounsaturated Fat:</b> Healthy fats that support heart health and reduce inflammation.</li>
@@ -74,12 +77,12 @@
                             <li><b>Saturated Fat:</b> A type of fat that should be consumed in moderation to maintain heart health.</li>
                             <li><b>Total Lipid (Fat):</b> Includes all fat types, providing energy and supporting cell function.</li>
                         </ul>
-                        <button class = "closeButton" onclick="display('fats')">Close</button>
+                        <button class = "closeButton" onclick="display('fats', 'fatsArrow')">Close</button>
                     </div>
                     <br>
             </div>
             <div class = "dropdown">
-                <button class = "bigButton" onclick="display('householdWeights')">Household Weights</button>
+                <button class = "bigButton" onclick="display('householdWeights', 'houseWeightArrow')">Household Weights <i id="houseWeightArrow" class="arrow right"></i></button>
                     <div id="householdWeights">
                         <ul>
                             <li><b>1st Household Weight:</b> The weight of a typical serving size.</li>
@@ -87,12 +90,12 @@
                             <li><b>2nd Household Weight:</b> Another measurement of a typical serving size.</li>
                             <li><b>2nd Household Weight Description:</b> A description of the second household weight measurement.</li>
                         </ul>
-                        <button class = "closeButton" onclick="display('householdWeights')">Close</button>
+                        <button class = "closeButton" onclick="display('householdWeights', 'houseWeightArrow')">Close</button>
                     </div>
                     <br>
             </div>
             <div class = "dropdown">
-                <button class = "bigButton" onclick="display('minerals')">Minerals</button>
+                <button class = "bigButton" onclick="display('minerals', 'minArrow')">Minerals <i id="minArrow" class="arrow right"></i></button>
                     <div id="minerals">
                         <ul>
                             <li><b>Calcium:</b> Important for strong bones, teeth, and muscle function.</li>
@@ -104,12 +107,12 @@
                             <li><b>Sodium:</b> Regulates fluid balance and nerve function but should be consumed in moderation.</li>
                             <li><b>Zinc:</b> Supports immune function, wound healing, and DNA synthesis.</li>
                         </ul>
-                        <button class = "closeButton" onclick="display('minerals')">Close</button>
+                        <button class = "closeButton" onclick="display('minerals', 'minArrow')">Close</button>
                     </div>
                     <br>
             </div>
             <div class = "dropdown">
-                <button class = "bigButton" onclick="display('vitamins')">Vitamins</button>
+                <button class = "bigButton" onclick="display('vitamins', 'vitArrow')">Vitamins <i id="vitArrow" class="arrow right"></i></button>
                     <div id="vitamins">
                         <ul>
                             <li><b>Vitamin A (IU):</b> Supports vision, immune function, and skin health.</li>
@@ -120,7 +123,7 @@
                             <li><b>Vitamin E:</b> An antioxidant that protects cells from damage and supports skin health.</li>
                             <li><b>Vitamin K:</b> Essential for blood clotting and bone health.</li>
                         </ul>
-                        <button class = "closeButton" onclick="display('vitamins')">Close</button>
+                        <button class = "closeButton" onclick="display('vitamins', 'vitArrow')">Close</button>
                     </div>
                     <br>
             </div>
