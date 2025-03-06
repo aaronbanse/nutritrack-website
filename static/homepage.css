@@ -20,7 +20,7 @@ header * {
 header h1 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #386641;
-    font-size: 50px;
+    font-size: 3.25vw;
 }
 header h1 a{
     color: #386641;
@@ -33,7 +33,7 @@ header li a {
     color: black;
     text-decoration: none;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 25px
+    font-size: 1.75vw;
 }
 nav li a:hover {
 	color: white;
@@ -93,7 +93,7 @@ body {
     color: #F2E8CF;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
-    font-size: 30px;
+    font-size: 2.5vw;
     padding: 20px;
     text-align: center;
     background-color: #386641;
@@ -147,9 +147,9 @@ input[type=submit]:hover {
 /* Arrows */
 .arrow {
     border: solid #F2E8CF;
-    border-width: 0 7px 7px 0;
+    border-width: 0 0.5vw 0.5vw 0;
     display: inline-block;
-    padding: 11px;
+    padding: 0.75vw;
 }
 .arrow:hover {
     border: solid #A7C957;
