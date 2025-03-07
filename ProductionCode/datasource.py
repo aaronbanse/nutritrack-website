@@ -31,7 +31,7 @@ class DataSource:
             # set up a cursor
             cursor = self.connection.cursor()
 
-            query = "SELECT \"Description\" FROM food_nutrition WHERE \"Category\" = %s;"
+            query = "SELECT Description FROM food_nutrition WHERE Category = %s;"
             cursor.execute(query, (category,))
             # use np to squeeze
             descriptions = np.array(cursor.fetchall()).squeeze(1)
@@ -53,7 +53,7 @@ class DataSource:
             # set up a cursor
             cursor = self.connection.cursor()
             
-            data_query = "SELECT * FROM food_nutrition WHERE \"Description\" = %s;"
+            data_query = "SELECT * FROM food_nutrition WHERE Description = %s;"
             columns_query = "SELECT column_name FROM information_schema.columns WHERE table_name = 'food_nutrition';"
 
             # use np to squeeze
