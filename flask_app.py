@@ -36,7 +36,7 @@ def get_foods(category):
     else:
         return render_template("get_foods_output.html",items=items,category=category,succeeded=False)
 
-@app.route("/health-facts/<description>", strict_slashes = False)
+@app.route("/health-facts/<description>", strict_slashes=False)
 def get_nutrition(description):
     """
     Using the helper functions, accesses the data set to print the related nutritional information for a specific food type.
@@ -48,13 +48,13 @@ def get_nutrition(description):
     labels, data = ds.fromDescriptionGetNutrition(description=description)
     
     if len(data) > 0:
-        return render_template("get_nutrition_output.html", description=description.title(),items = zip(labels,data), succeeded=True)
+        return render_template("get_nutrition_output.html", description=description.title(), items=zip(labels, data), succeeded=True)
     else:
-        return render_template("get_nutrition_output.html", description=description.title(),items = [], succeeded=False)
+        return render_template("get_nutrition_output.html", description=description.title(), items=[], succeeded=False)
 
 @app.errorhandler(404)
 def page_not_found(e):
    return render_template("error.html")
 
 if __name__== "__main__":
-   app.run(debug=True, port=5600)
+   app.run(debug=True, port=5139)
