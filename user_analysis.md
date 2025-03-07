@@ -173,6 +173,7 @@ Database:
 Front End:
 * Users can perceive changes in color
 * Users do not have sensitive eyes that could be strained by bright colors
+* Users have the resources necessary to precisely measure quanities of food
 
 *Imagine:*
 
@@ -226,6 +227,10 @@ Users may not be able to perceive changes in color on the website. This is impor
 
 Users with sensitive eyes may find that the light green colors are too bright for their eyes. They may need to use the website and find the colors too bright to have a pleasant experience.
 
+<span style="text-decoration:underline;">Front End Assumption #12:</span>
+
+Users need to be able to measure precise amounts of food. Users may find this inconvenient, and they may not even have the necessary equipment to measure the food. 
+
 *Design*
 
 <span style="text-decoration:underline;">Command Line Assumption #1:</span>
@@ -277,3 +282,7 @@ It would be difficult to fix this issue entirely, but it would be possible to ch
 <span style="text-decoration:underline;">Front End Assumption #11:</span>
 
 To help with this issue, colors could be chosen that are easier on the eyes. However, individual preferences are too varied to ensure that all users have an optimal experience with the website.
+
+<span style="text-decoration:underline;">Front End Assumption #12:</span>
+
+To help with this issue, multiple forms of measurement are included on the health facts page, including easily estimated quantities such as "1 cubic inch".
