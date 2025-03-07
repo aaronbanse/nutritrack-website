@@ -153,15 +153,15 @@ input[type=submit]:hover {
 }
 .arrow:hover {
     border: solid #A7C957;
-    border-width: 0 7px 7px 0;
+    border-width: 0 0.5vw 0.5vw 0;
     display: inline-block;
-    padding: 11px;
+    padding: 0.75vw;
 }
 .arrow:active {
     border: solid #6A994E;
-    border-width: 0 7px 7px 0;
+    border-width: 0 0.5vw 0.5vw 0;
     display: inline-block;
-    padding: 11px;
+    padding: 0.75vw;
 }
 .right {
     transform: rotate(-45deg);
