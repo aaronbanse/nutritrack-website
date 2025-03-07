@@ -21,11 +21,11 @@
                 <div class="info">
                     {% if succeeded %}
                         <h3>The Nutrients in {{description}} Are:</h3>
-                            <ul>
-                                {% for item in items%}
-                                    <li>{{item[0]}}: {{item[1]}}</li>
-                                {% endfor %}
-                            </ul>
+                        <ul>
+                            {% for item in items %}
+                                <li>{{ item[0].split('(')[0] }}: {{ item[1]}} {{ item[0].split('(')[1] | replace(')', '') }}</li>
+                            {% endfor %}
+                        </ul>
                     {% else %}
                         <h3>The food named '{{description}}' is not in the data set.</h3>
                     {% endif %}

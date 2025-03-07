@@ -40,14 +40,40 @@ class DataSource:
 
         except Exception as e:
             return  []
-        
+
+    def fromDescriptionGetNutrition(self, description):
+            '''
+            From the table, accesses a specific food from a Descrition (e.g. Cheese,Blue) that a user inputs
+            using the command line, and returns the nutrition information.
+            
+            Arguments:
+            description: accessed from the command line, a description of food, e.g. Cheese,Blue
+            '''
+            try:
+                # set up a cursor
+                cursor = self.connection.cursor()
+                
+                data_query = "SELECT * FROM food_nutrition WHERE Description = %s;"
+                columns_query = "SELECT column_name FROM information_schema.columns WHERE table_name = 'food_nutrition';"
+
+                # use np to squeeze
+                cursor.execute(columns_query)
+                labels = np.array(cursor.fetchall()).squeeze(1)[3:]
+                cursor.execute(data_query, (description,))
+                data = np.array(cursor.fetchall()).squeeze(0)[3:]
+                
+                return list(labels), list(data)
+
+            except Exception as e:
+                return [],[]
+            
     def fromDescriptionGetNutrition(self, description):
         '''
-        From the table, accesses a specific food from a Descrition (e.g. Cheese,Blue) that a user inputs
-        using the command line, and returns the nutrition information.
+        From the table, accesses a specific food from a Description (e.g. Cheese, Blue) that a user inputs
+        and returns the nutrition information along with their respective units.
         
         Arguments:
-        description: accessed from the command line, a description of food, e.g. Cheese,Blue
+        description: a description of food, e.g. Cheese, Blue
         '''
         try:
             # set up a cursor
@@ -61,8 +87,57 @@ class DataSource:
             labels = np.array(cursor.fetchall()).squeeze(1)[3:]
             cursor.execute(data_query, (description,))
             data = np.array(cursor.fetchall()).squeeze(0)[3:]
-            
-            return list(labels), list(data)
+
+            # Nutrient units mapping
+            nutrient_units = {
+                "alpha_carotene": "µg",
+                "ash": "g",
+                "beta_carotene": "µg",
+                "beta_cryptoxanthin": "µg",
+                "carbohydrate": "g",
+                "cholesterol": "mg",
+                "choline": "mg",
+                "fiber": "g",
+                "kilocalories": "kcal",
+                "lutein_and_zeaxanthin": "µg",
+                "lycopene": "µg",
+                "manganese": "mg",
+                "niacin": "mg",
+                "pantothenic_acid": "mg",
+                "protein": "g",
+                "retinol": "µg",
+                "riboflavin": "mg",
+                "selenium": "µg",
+                "sugar_total": "g",
+                "thiamin": "mg",
+                "water": "g",
+                "monosaturated_fat": "g",
+                "polysaturated_fat": "g",
+                "saturated_fat": "g",
+                "total_lipid": "g",
+                "calcium": "mg",
+                "copper": "mg",
+                "iron": "mg",
+                "magnesium": "mg",
+                "phosphorus": "mg",
+                "potassium": "mg",
+                "sodium": "mg",
+                "zinc": "mg",
+                "vitamin_a_iu": "IU",
+                "vitamin_a_rae": "µg",
+                "vitamin_b12": "µg",
+                "vitamin_b6": "mg",
+                "vitamin_c": "mg",
+                "vitamin_e": "mg",
+                "vitamin_k": "µg",
+                "first_household_weight": "g",
+                "second_household_weight": "g"
+            }
+
+            # Append the units to the labels
+            labels_with_units = [f"{label} ({nutrient_units.get(label, '')})" for label in labels]
+
+            return list(labels_with_units), list(data)
 
         except Exception as e:
-            return [],[]
+            return [], []
