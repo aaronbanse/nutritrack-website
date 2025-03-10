@@ -35,7 +35,7 @@ class DataSource:
             cursor.execute(query, (category,))
             # use np to squeeze
             descriptions = np.array(cursor.fetchall()).squeeze(1)
-            
+
             return list(descriptions)
 
         except Exception as e:
@@ -61,7 +61,7 @@ class DataSource:
                 labels = np.array(cursor.fetchall()).squeeze(1)[3:]
                 cursor.execute(data_query, (description,))
                 data = np.array(cursor.fetchall()).squeeze(0)[3:]
-                
+
                 return list(labels), list(data)
 
             except Exception as e:

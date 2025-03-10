@@ -1,11 +1,13 @@
 from flask_app import *
 import unittest
+from flask import render_template
 
 class Test_Homepage(unittest.TestCase):
     def test_homepage_route(self):
         self.app = app.test_client()
         response = self.app.get('/', follow_redirects=True)
-        self.assertEqual(b'<!DOCTYPE html>\n<html>\n    <head>\n        <title>Home</title>', response.data[:61])
+        with app.app_context():
+            self.assertEqual(render_template("index.html").encode(), response.data)
 
 class Test_Get_Foods(unittest.TestCase):
     def test_get_food_route(self):

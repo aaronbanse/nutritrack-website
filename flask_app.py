@@ -34,7 +34,7 @@ def get_foods(category):
     if len(items) > 0:
         return render_template("get_foods_output.html",items=items,category=category, succeeded=True)
     else:
-        return render_template("get_foods_output.html",items=items,category=category,succeeded=False)
+        return render_template("get_foods_output.html",items=items,category=category, succeeded=False)
 
 @app.route("/health-facts/<description>", strict_slashes=False)
 def get_nutrition(description):
