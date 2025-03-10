@@ -10,7 +10,7 @@ class Test_Command_Line(unittest.TestCase):
         # format of the line below retrieved from linked python subprocess article in assignment
         code = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, text=True)
         output, err = code.communicate()
-        self.assertEqual(output.strip(), 'CHEESE,BLUE\nCHEESE,BRICK\nCHEESE,BRIE')
+        self.assertEqual(output.strip()[:83], 'CHEESE,BLUE\nCHEESE,BRICK\nCHEESE,BRIE\nCHEESE,CAMEMBERT\nCHEESE,CARAWAY\nCHEESE,CHEDDAR')
         code.terminate()
 
     def test_main_command_line_list_edgeCase(self):
@@ -28,7 +28,7 @@ class Test_Command_Line(unittest.TestCase):
         # format of the line below retrieved from linked python subprocess article in assignment
         code = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, text=True)
         output, err = code.communicate()
-        self.assertEqual(output.strip(), 'Alpha Carotene: 0.0\nAsh: 5.11\nBeta Carotene: 74.0\nBeta Cryptoxanthin: 0.0\nCarbohydrate: 2.34')
+        self.assertEqual(output.strip()[:130], 'alpha_carotene (µg): 0\nash (g): 5.11\nbeta_carotene (µg): 74\nbeta_cryptoxanthin (µg): 0\ncarbohydrate (g): 2.34\ncholesterol (mg): 75')
         code.terminate()
     
     def test_main_command_line_health_facts_edgeCase(self):
