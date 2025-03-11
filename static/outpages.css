@@ -67,7 +67,7 @@ body {
     padding: 10px;
 }
 .info a{
-    color:#6A994E;
+    color:#F2E8CF;
 }
 .info a:hover{
     color:#A7C957;
@@ -81,17 +81,17 @@ body {
     display: block;
     margin-bottom: 10px;
     padding: 10px;
-    color: #A7C957;
+    color: #F2E8CF;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .info ul li a{
-    color: #A7C957;
+    color: #F2E8CF;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 2vw;
 }
 .info ul li a:visited{
-    color: #F2E8CF;
+    color:#A7C957;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 2vw;
 }
@@ -163,8 +163,6 @@ input[type=submit]:hover {
     color:#386641;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 40%;
-    align-items: left;
 }
 .autocomplete-items div {
     padding: 10px;
