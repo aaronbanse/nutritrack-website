@@ -66,6 +66,14 @@ body {
     text-align: center;
     padding: 10px;
 }
+.info h5{
+    color: #F2E8CF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    font-size: 2vw;
+    text-align: center;
+    padding: 5px;
+}
 .info a{
     color:#F2E8CF;
 }
@@ -79,11 +87,18 @@ body {
     list-style-type: none;
     text-align: center;
     display: block;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 0px;
     color: #F2E8CF;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    object-fit: scale-down;
+    width: fit-content;
+    font-style: underline;
+}
+.info ul li:hover {
+    background-color: #BC4749;
 }
 .info ul li a{
     color: #F2E8CF;
@@ -100,6 +115,21 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 2vw;
 	background-color: #BC4749;
+}
+.hide {
+    display: none;
+}
+.nutrientHover:hover + .hide {
+    display: inline-flex;
+    float: inline-end;
+    color: #386641;
+    width: 30%;
+    background-color: #F2E8CF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5vw;
+    padding: 0.75vw;
+    margin: center;
+    text-align: center;
 }
 
 /* Input Form */
@@ -163,6 +193,8 @@ input[type=submit]:hover {
     color:#386641;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 40%;
+    align-items: left;
 }
 .autocomplete-items div {
     padding: 10px;
