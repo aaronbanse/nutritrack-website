@@ -8,7 +8,7 @@
         <main>
             <div class = "title" style="background-image: url('https://freerangestock.com/sample/166038/fresh-ingredients-for-healthy-cooking-on-white.jpg');"><mark>Daily Recommendations</mark></div>
             <div class = "subtitle"><h2>Discover Your Daily Nutrient Recommendations</h2></div>
-            <form class="input-form" method="POST" action="/recommendations/">
+            <form class="input-form" method="POST" action="/recommendations/#scrollto">
                 <br>
                 <label for="gender">Please select your preferred gender identity:</label>
                 <div>
@@ -37,7 +37,7 @@
                 <br>
             </form>
             <br>
-            <div class="nutrientOutput">
+            <div class="nutrientOutput" id="scrollto">
                 {% if age is not none %}
                     <div><h1>Your Recommended Intakes as a {{ age }} Year Old {{ gender | title }} Person</h1></div>
                     {% if age == "1-3" %}
