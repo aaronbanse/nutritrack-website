@@ -47,6 +47,9 @@ def get_nutrition(description):
     """
     description = description.upper()
     labels, data = ds.fromDescriptionGetNutrition(description=description)
+    for i in range(len(labels)):
+        labels[i] = labels[i].title()
+        labels[i] = labels[i].replace("_"," ")
     
     if len(data) > 0:
         return render_template("get_nutrition_output.html", description=description.title(), items=zip(labels, data), succeeded=True)

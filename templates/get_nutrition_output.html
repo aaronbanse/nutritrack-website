@@ -6,18 +6,67 @@
     </head>
     <body>
         <main>
-            <div class = "return">
-                <div class="subtitle"><h2>Nutritional Information for '{{description}}':</h2></div>
+            <div class="return">
+                <div class="subtitle"><h2>Nutritional Information for '{{ description }}':</h2></div>
                 <div class="info">
                     {% if succeeded %}
-                        <h3>The Nutrients in {{description}} Are:</h3>
+                        <h3>The Nutrients in {{ description }} Are:</h3>
+                        <h5>Hover over a nutrient to learn more.</h5>
                         <ul>
+                            {% set descriptions = [
+                                "Alpha Carotene: A type of antioxidant that supports immune function and skin health.",
+                                "Ash: Represents the total mineral content in food.",
+                                "Beta Carotene: A precursor to vitamin A, supports vision, skin health, and immune function.",
+                                "Beta Cryptoxanthin: An antioxidant and provitamin A carotenoid that supports immune health.",
+                                "Carbohydrate: A macronutrient that provides energy for bodily functions.",
+                                "Cholesterol: A lipid needed for cell membranes and hormone production, but excess can lead to health issues.",
+                                "Choline: Essential for brain development, liver function, and metabolism.",
+                                "Fiber: Supports digestion, heart health, and blood sugar regulation.",
+                                "Kilocalories: Measure of energy provided by food.",
+                                "Lutein and Zeaxanthin: Antioxidants that support eye health and reduce the risk of macular degeneration.",
+                                "Lycopene: An antioxidant found in tomatoes, supports heart health and may reduce cancer risk.",
+                                "Manganese: A mineral important for metabolism, bone formation, and antioxidant function.",
+                                "Niacin (Vitamin B3): Supports energy metabolism, skin health, and nervous system function.",
+                                "Pantothenic Acid (Vitamin B5): Aids in energy production and hormone synthesis.",
+                                "Protein: Essential for muscle growth, repair, and overall body function.",
+                                "Refuse Percentage: The proportion of a food item that is inedible or discarded.",
+                                "Retinol: A form of vitamin A essential for vision, skin health, and immunity.",
+                                "Riboflavin (Vitamin B2): Supports energy production and cell function.",
+                                "Selenium: A mineral that plays a role in thyroid function and antioxidant defense.",
+                                "Sugar (Total): A source of quick energy, but excessive intake can lead to health issues.",
+                                "Thiamin (Vitamin B1): Supports energy metabolism and nervous system health.",
+                                "Water: Essential for hydration, temperature regulation, and overall body function.",
+                                "Monounsaturated Fat: Healthy fats that support heart health and reduce inflammation.",
+                                "Polyunsaturated Fat: Essential fats, including omega-3 and omega-6, that support brain and heart health.",
+                                "Saturated Fat: A type of fat that should be consumed in moderation to maintain heart health.",
+                                "Total Lipid (Fat): Includes all fat types, providing energy and supporting cell function.",
+                                "1st Household Weight: The weight of a typical serving size.",
+                                "1st Household Weight Description: A description of the first household weight measurement.",
+                                "2nd Household Weight: Another measurement of a typical serving size.",
+                                "2nd Household Weight Description: A description of the second household weight measurement.",
+                                "Calcium: Important for strong bones, teeth, and muscle function.",
+                                "Copper: Supports iron metabolism and immune function.",
+                                "Iron: Essential for oxygen transport in blood and energy production.",
+                                "Magnesium: Supports muscle function, nerve transmission, and heart health.",
+                                "Phosphorus: Important for bone health and energy production.",
+                                "Potassium: Helps regulate fluid balance, muscle contractions, and heart function.",
+                                "Sodium: Regulates fluid balance and nerve function but should be consumed in moderation.",
+                                "Zinc: Supports immune function, wound healing, and DNA synthesis.",
+                                "Vitamin A (IU): Supports vision, immune function, and skin health.",
+                                "Vitamin A (RAE): Supports vision, immune function, and skin health.",
+                                "Vitamin B12: Essential for nerve function, red blood cell formation, and DNA production.",
+                                "Vitamin B6: Helps with brain development, metabolism, and immune function.",
+                                "Vitamin C: An antioxidant that supports immunity, skin health, and wound healing.",
+                                "Vitamin E: An antioxidant that protects cells from damage and supports skin health.",
+                                "Vitamin K: Essential for blood clotting and bone health."
+                            ] %}
                             {% for item in items %}
-                                <li>{{ item[0].split('(')[0] }}: {{ item[1]}} {{ item[0].split('(')[1] | replace(')', '') }}</li>
+                                <li class="nutrientHover">{{ item[0].strip().split('(')[0] }}: {{ item[1] }}{{ item[0].split('(')[1] | replace(')', '') }}</li>
+                                <h4 class="hide">{{ descriptions[loop.index0] }}</h4>
                             {% endfor %}
                         </ul>
                     {% else %}
-                        <h3>The food named '{{description}}' is not in the data set.</h3>
+                        <h3>The food named '{{ description }}' is not in the data set.</h3>
                     {% endif %}
                 </div>
                 <div class = "info">
