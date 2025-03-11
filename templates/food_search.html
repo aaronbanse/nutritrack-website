@@ -1,39 +1,37 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Food Search</title>
         <link rel="stylesheet" href="../static/homepage.css">
     </head>
     <body>
-        <header>
-            <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yNTUuanBn.jpg">
-            <h1><a href="/"> Nutritrack</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/nutrients/">Nutrient Information</a></li>
-                    <li><a href="/food-search/">Food Search</a></li>
-                </ul>
-            </nav>
-        </header>
         <main>
             <div class = "title" style="background-image: url('https://freerangestock.com/sample/166038/fresh-ingredients-for-healthy-cooking-on-white.jpg');"><mark>Food Search</mark></div>
             <div class = "subtitle"><h2>Explore the Data Set</h2></div>
-            <div class = "input-form">
-                <form id="categoryForm" method="get">
+            <div class="input-form">
+                <form autocomplete="off" id="categoryForm" method="get">
                     <label for="category"><h2>Enter A Category of Food:</h2></label>
-                    <input class="text" type="text" id="categoryInput" name="category" placeholder="Enter a food, ie cheese...">
-                    <input class="submit" type="submit" value="Submit">
+                    <div class="autocomplete">
+                        <input class="text" id="categoryInput" type="text" name="category" placeholder="Enter a food, ie cheese...">
+                    </div>
+                    <div>
+                        <input type="submit">
+                    </div>
                 </form>
-                <!-- Retrieved from https://www.w3schools.com/tags/tag_script.asp -->
-                <script>
-                    document.getElementById('categoryForm').addEventListener('submit', function(event) {
-                        event.preventDefault();
-                        var categoryInput = document.getElementById('categoryInput').value;
-                        window.location.href = '/list/' + categoryInput;
-                    });
-                </script>
-                <br>
             </div>
+            <!-- Retrieved from google search, https://www.google.com/search?q=how+to+separate+javascript+into+separate+file&oq=how+to+separate+javascript+into+separate+file&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjINCAQQABiGAxiABBiKBTINCAUQABiGAxiABBiKBTIHCAYQABjvBTIHCAcQABjvBdIBCDc1NjJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8-->
+            <script src="../static/autocomplete.js"></script>
+            <script>
+                /*An array containing the foods in our data set:*/
+                autocomplete(document.getElementById("categoryInput"));
+              
+                // script run to submit the form input to the url
+                document.getElementById('categoryForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var categoryInput = document.getElementById('categoryInput').value;
+                window.location.href = '/list/' + categoryInput;
+                });
+            </script>
             <div class = "info">
                 <h3>Suggested Searches:</h3>
                 <p>cheese</p>
@@ -45,5 +43,16 @@
                 <h3>And Anything Else You Need!</h3>
             </div>
         </main>
+        <header>
+            <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L2pvYjY4Ni0yNTUuanBn.jpg">
+            <h1><a href="/"> Nutritrack</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/nutrients/">Nutrient Information</a></li>
+                    <li><a href="/food-search/">Food Search</a></li>
+                </ul>
+            </nav>
+        </header>
     </body>
 </html>

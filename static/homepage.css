@@ -160,6 +160,8 @@ input[type=submit]:hover {
     color:#386641;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 40%;
+    align-items: left;
 }
 .autocomplete-items div {
     padding: 10px;
