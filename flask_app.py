@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from ProductionCode.datasource import DataSource
 
 # dataset accessor
@@ -14,6 +14,16 @@ def homepage():
 @app.route("/nutrients/", strict_slashes = False)
 def get_nutrient_facts():
     return render_template("nutrient_facts.html")
+
+@app.route("/recommendations/", methods=['GET', 'POST'], strict_slashes = False)
+def get_recommendations():
+    age = None
+    gender = None
+    if request.method == 'POST':
+        # Capture form data
+        age = request.form.get('age')
+        gender = request.form.get('gender')
+    return render_template("recommendations.html", age=age, gender=gender)
 
 @app.route("/food-search/", strict_slashes = False)
 def get_food_search():
