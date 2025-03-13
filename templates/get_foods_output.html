@@ -8,6 +8,7 @@
         <main>
             <div class = "return">
                 <div class="subtitle"><h2>Returning Results For '{{category}}':</h2></div>
+                <h4><a href="/food-search/#abbreviations">For More Information on Abbreviations</a></h4>
                 <div class="info">
                     {% if succeeded %}
                         <h3>The Types of {{category}} in This Data Set Are:</h3>
@@ -21,6 +22,7 @@
                     {% endif %}
                 </div>
             </div>
+            <br>
             <div class="input-form">
                 <form autocomplete="off" id="categoryForm" method="get">
                     <label for="category"><h1>Search Again?</h1></label>
