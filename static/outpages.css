@@ -43,12 +43,26 @@ nav li a:hover {
 /* Body */
 body {
     background-color: #F2E8CF;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Body Text */
-.return{
+.return {
     background-color: #386641;
     padding: 20px;
+    margin: center;
+    text-align: center;
+}
+.return h4 a {
+    color: #F2E8CF;
+    font-size: 2vw;
+}
+.return h4 a:hover {
+    color: #6A994E;
+    background-color: #F2E8CF;
+}
+.return h4 a:active {
+    color: #BC4749;
 }
 .subtitle {
     color: #F2E8CF;
@@ -193,7 +207,7 @@ input[type=submit]:hover {
     color:#386641;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 40%;
+    width: 60%;
     align-items: left;
 }
 .autocomplete-items div {

@@ -10,14 +10,12 @@
             <div class = "subtitle"><h2>Discover Your Daily Nutrient Recommendations</h2></div>
             <form class="input-form" method="POST" action="/recommendations/#scrollto">
                 <br>
-                <label for="gender">Please select your preferred gender identity:</label>
+                <label for="gender">Please select your biological sex:</label>
                 <div>
                     <select class = "demographics-form" id="gender" name="gender">
-                        <option value="nonbinary">Non Binary</option>
                         <option value="female">Female</option>
                         <option value="male">Male</option>    
                         <option value="other">Other</option>
-                        <option value="none">Prefer Not To Say</option>
                     </select>
                 </div>
                 <label for="age">Please input your age in years:</label>
@@ -39,254 +37,60 @@
             <br>
             <div class="nutrientOutput" id="scrollto">
                 {% if age is not none %}
-                    <div><h1>Your Recommended Intakes as a {{ age }} Year Old {{ gender | title }} Person</h1></div>
+                    <div><h1>Your Recommended Intakes as a {{ age }} Year Old of {{ gender | title }} Biological Sex:</h1></div>
+                    
                     {% if age == "1-3" %}
-                        <div class="nutrientreturn">
-                            <h1>Macro Nutrients:</h1>
-                                <ul>
-                                    <li>Protein(g): 13</li>
-                                    <li>Carbohydrate(g): 130</li>
-                                    <li>Dietary Fiber(g): 14</li>
-                                    <li>Total Fat(% of Daily Intake): 30-40%</li>
-                                </ul>    
-                            <h1>Minerals:</h1>
-                                <ul>
-                                    <li>Calcium(mg): 700</li>
-                                    <li>Iron(mg): 7</li>
-                                    <li>Potassium(mg): 3000</li>
-                                    <li>Sodium(mg): 1500</li>
-                                    <li>Copper(mg): 0.34</li>
-                                </ul>
-                        </div>
+                        {% set ageIndex = 0 | int %}
                     {% elif age == "4-8" %}
-                        {% if gender == 'male' %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 19</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 19.6</li>
-                                        <li>Total Fat(% of Daily Intake): 25 - 35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1000</li>
-                                        <li>Iron(mg): 10</li>
-                                        <li>Potassium(mg): 3800</li>
-                                        <li>Sodium(mg): 1900</li>
-                                        <li>Copper(mg): 0.44</li>
-                                    </ul>
-                            </div>
-                        {% else %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 19</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 16.8</li>
-                                        <li>Total Fat(% of Daily Intake): 25-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1000</li>
-                                        <li>Iron(mg): 10</li>
-                                        <li>Potassium(mg): 3800</li>
-                                        <li>Sodium(mg): 1900</li>
-                                        <li>Copper(mg): 0.44</li>
-                                    </ul>
-                            </div>
-                        {% endif %}
+                        {% set ageIndex = 1 | int %}
                     {% elif age == "9-13" %}
-                        {% if gender == 'male' %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 34</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 25.2</li>
-                                        <li>Total Fat(% of Daily Intake): 25-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul></ul>    
-                                        <li>Calcium(mg): 1300</li>
-                                        <li>Iron(mg): 8</li>
-                                        <li>Potassium(mg): 4500</li>
-                                        <li>Sodium(mg): 2200</li>
-                                        <li>Copper(mg): 0.7</li>
-                                    </ul>
-                            </div>
-                        {% else %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 34</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 22.4</li>
-                                        <li>Total Fat(% of Daily Intake): 25-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1300</li>
-                                        <li>Iron(mg): 8</li>
-                                        <li>Potassium(mg): 4500</li>
-                                        <li>Sodium(mg): 2200</li>
-                                        <li>Copper(mg): 0.7</li>
-                                    </ul>
-                            </div>
-                        {% endif %}
+                        {% set ageIndex = 2 | int %}
                     {% elif age == "14-18" %}
-                        {% if gender == 'male' %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 52</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 30.8</li>
-                                        <li>Total Fat(% of Daily Intake): 25-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>  
-                                        <li>Calcium(mg): 1300</li>
-                                        <li>Iron(mg): 11</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.89</li>
-                                    </ul>  
-                            </div>
-                        {% else %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 46</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 25.2</li>
-                                        <li>Total Fat(% of Daily Intake): 25-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1300</li>
-                                        <li>Iron(mg): 15</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.89</li>
-                                    </ul>
-                            </div>
-                        {% endif %}
+                        {% set ageIndex = 3 | int %}
                     {% elif age == "19-30" %}
-                        {% if gender == 'male' %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 56</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 33.6</li>
-                                        <li>Total Fat(% of Daily Intake): 20-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1000</li>
-                                        <li>Iron(mg): 8</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.9</li>
-                                    </ul>
-                            </div>
-                        {% else %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 46</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 28</li>
-                                        <li>Total Fat(% of Daily Intake): 20-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1000</li>
-                                        <li>Iron(mg): 18</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.9</li>
-                                    </ul>
-                            </div>
-                        {% endif %}
+                        {% set ageIndex = 4 | int %}
                     {% elif age == "31-50" %}
-                        {% if gender == 'male' %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 56</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 30.8</li>
-                                        <li>Total Fat(% of Daily Intake): 20-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1000</li>
-                                        <li>Iron(mg): 8</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.9</li>
-                                    </ul>
-                            </div>
-                        {% else %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 46</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 25.2</li>
-                                        <li>Total Fat(% of Daily Intake): 20-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1000</li>
-                                        <li>Iron(mg): 18</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.9</li>
-                                    </ul>
-                            </div>
-                        {% endif %}
+                        {% set ageIndex = 5 | int %}
                     {% elif age == "51+" %}
-                        {% if gender == 'male' %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 56</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 28</li>
-                                        <li>Total Fat(% of Daily Intake): 20-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1200</li>
-                                        <li>Iron(mg): 8</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.9</li>
-                                    </ul>
-                            </div>
-                        {% else %}
-                            <div class="nutrientreturn">
-                                <h1>Macro Nutrients:</h1>
-                                    <ul>
-                                        <li>Protein(g): 46</li>
-                                        <li>Carbohydrate(g): 130</li>
-                                        <li>Dietary Fiber(g): 22.4</li>
-                                        <li>Total Fat(% of Daily Intake): 20-35%</li>
-                                    </ul>
-                                <h1>Minerals:</h1>
-                                    <ul>
-                                        <li>Calcium(mg): 1200</li>
-                                        <li>Iron(mg): 8</li>
-                                        <li>Potassium(mg): 4700</li>
-                                        <li>Sodium(mg): 2300</li>
-                                        <li>Copper(mg): 0.9</li>
-                                    </ul>
-                            </div>
-                        {% endif %}
+                        {% set ageIndex = 6 | int %}
                     {% endif %}
+
+                    {% if gender == "male" %}
+                        {% set sexIndex = 0 | int %}
+                    {% elif gender == "female" %}
+                        {% set sexIndex = 1 | int %}
+                    {% elif gender == "other" %}
+                        {% set sexIndex = 2 | int %}
+                        {% set notice = "The values for the selected value of 'Other' are an average of the male and female options due to a lack of available data." %}
+                    {% endif %}
+
+                    {% set nutrientAmounts = [[[1000,13,130,14,"30-40%",700,7,3000,1500,0.34],[1000,13,130,14,"30-40%",700,7,3000,1500,0.34],[1000,13,130,14,"30-40%",700,7,3000,1500,0.34]],
+                                                [[1400,19,130,19.6,"25-35%",1000,10,3800,1900,0.44],[1200, 19,130,16.8,"25-35%",1000,10,3800,1900,0.44],[1300,19,130,18.2,"25-35%",1000,10,3800,1900,0.44]],
+                                                [[1800,34,130,25.2,"25-35%",1300,8,4500,2200,0.7],[1600,34,130,22.4,"25-35%",1300,8,4500,2200,0.7],[1700,34,130,23.8,"25-35%",1300,8,4500,2200,0.7]],
+                                                [[2800,52,130,30.8,"25-35%",1300,11,4700,2300,0.89],[1800,46,130,25.2,"25-35%",1300,15,4700,2300,0.89],[2300,49,130,28,"25-35%",1300,13,4700,2300,0.89]],
+                                                [[2600,56,130,33.6,"20-35%",1000,8,4700,2300,0.9],[2000,46,130,28,"20-35%",1000,18,4700,2300,0.9],[2300,51,130,30.8,"20-35%",1000,13,4700,2300,0.9]],
+                                                [[2200,56,130,30.8,"20-35%",1000,8,4700,2300,0.9],[1800,46,130,25.2,"20-35%",1000,18,4700,2300,0.9],[2000,51,130,28,"20-35%",1000,13,4700,2300,0.9]],
+                                                [[2000,56,130,28,"20-35%",1200,8,4700,2300,0.9],[1600,46,130,22.4,"20-35%",1200,8,4700,2300,0.9],[1800,51,130,25.2,"20-35%",1200,8,4700,2300,0.9]]] %}
+
+                    <div class="nutrientreturn">
+                        <h6>Recommended quantities based on a {{ nutrientAmounts[ageIndex][sexIndex][0] }} calorie diet.</h6>
+                        <h6>{{ notice }}</h6>
+                        <h1>Macro Nutrients:</h1>
+                            <ul>
+                                <li>Protein(g): {{ nutrientAmounts[ageIndex][sexIndex][1] }}</li>
+                                <li>Carbohydrate(g): {{ nutrientAmounts[ageIndex][sexIndex][2] }}</li>
+                                <li>Dietary Fiber(g): {{ nutrientAmounts[ageIndex][sexIndex][3] }}</li>
+                                <li>Total Fat(% of Daily Intake): {{ nutrientAmounts[ageIndex][sexIndex][4] }}</li>
+                            </ul>  
+                        <h1>Minerals:</h1>
+                            <ul>
+                                <li>Calcium(mg): {{ nutrientAmounts[ageIndex][sexIndex][5] }}</li>
+                                <li>Iron(mg): {{ nutrientAmounts[ageIndex][sexIndex][6] }}</li>
+                                <li>Potassium(mg): {{ nutrientAmounts[ageIndex][sexIndex][7] }}</li>
+                                <li>Sodium(mg): {{ nutrientAmounts[ageIndex][sexIndex][8] }}</li>
+                                <li>Copper(mg): {{ nutrientAmounts[ageIndex][sexIndex][9] }}</li>
+                            </ul>
+                    </div>
                 {% endif %}
                 <h1><a href="/nutrients/">Learn More About These Nutrients</a></h1>
                 <h1><a href="https://odphp.health.gov/sites/default/files/2019-09/Appendix-E3-1-Table-A4.pdf">Source of Daily Values</a></h1>

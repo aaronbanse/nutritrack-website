@@ -98,6 +98,19 @@ body {
     text-align: center;
     background-color: #386641;
 }
+.info a {
+    color: #F2E8CF;
+}
+.info a:hover {
+    color: #6A994E;
+    background-color: #F2E8CF;
+}
+.info a:active {
+    color: #BC4749;
+}
+.info ul {
+    list-style-type: none;
+}
 
 /* Recommended Intake */
 .demographics-form {
@@ -211,7 +224,7 @@ input[type=submit]:hover {
     color:#386641;
     font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 40%;
+    width: 60%;
     align-items: left;
 }
 .autocomplete-items div {
