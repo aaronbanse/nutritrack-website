@@ -31,6 +31,23 @@ The original website allowed users to search for a specific food, providing info
 #### Fix: `get_foods_output.html`  
 To address this issue, `get_foods_output.html` was modified to return a description of the nutrient when it is hovered over. This provides users with a more seamless experience, allowing them to explore the nutrient information while briefly hovering over nutrients for descriptions. The Nutrient Information page remains usable for users who prefer to view the comprehensive list of nutrients.
 
+## Code Smells Fixes
+
+### Issue #1
+The original coding in this project had a lot of duplicated code, particularly in the homepage.css. There were many excess lines in the CSS that applied to the same properties to multiple div tags, making the code very redundant and hard to maintain. 
+
+#### Fix: `homepage.css` 
+To address this issue, excess lines were deleted, and commonly used CSS variables, such as font-family and background-color, were moved to the body{} selector. This centralized styling, reducing redundancy and improving readbility and maintainability.
+
+---
+
+### Issue 2  
+\\ TODO
+
+#### Fix: 
+\\ TODO
+
+
 
 # Command Line Interface
 ### Basic Usage Examples
