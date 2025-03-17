@@ -10,9 +10,9 @@
             <div class = "subtitle"><h2>Discover Your Daily Nutrient Recommendations</h2></div>
             <form class="input-form" method="POST" action="/recommendations/#scrollto">
                 <br>
-                <label for="gender">Please select your biological sex:</label>
+                <label for="sex">Please select your biological sex:</label>
                 <div>
-                    <select class = "demographics-form" id="gender" name="gender">
+                    <select class = "demographics-form" id="sex" name="sex">
                         <option value="female">Female</option>
                         <option value="male">Male</option>    
                         <option value="other">Other</option>
@@ -37,7 +37,7 @@
             <br>
             <div class="nutrientOutput" id="scrollto">
                 {% if age is not none %}
-                    <div><h1>Your Recommended Intakes as a {{ age }} Year Old of {{ gender | title }} Biological Sex:</h1></div>
+                    <div><h1>Your Recommended Intakes as a {{ age }} Year Old of {{ sex | title }} Biological Sex:</h1></div>
                     
                     {% if age == "1-3" %}
                         {% set ageIndex = 0 | int %}
@@ -55,11 +55,11 @@
                         {% set ageIndex = 6 | int %}
                     {% endif %}
 
-                    {% if gender == "male" %}
+                    {% if sex == "male" %}
                         {% set sexIndex = 0 | int %}
-                    {% elif gender == "female" %}
+                    {% elif sex == "female" %}
                         {% set sexIndex = 1 | int %}
-                    {% elif gender == "other" %}
+                    {% elif sex == "other" %}
                         {% set sexIndex = 2 | int %}
                         {% set notice = "The values for the selected value of 'Other' are an average of the male and female options due to a lack of available data." %}
                     {% endif %}

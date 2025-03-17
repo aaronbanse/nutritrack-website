@@ -18,12 +18,12 @@ def get_nutrient_facts():
 @app.route("/recommendations/", methods=['GET', 'POST'], strict_slashes = False)
 def get_recommendations():
     age = None
-    gender = None
+    sex = None
     if request.method == 'POST':
         # Capture form data
         age = request.form.get('age')
-        gender = request.form.get('gender')
-    return render_template("recommendations.html", age=age, gender=gender)
+        sex = request.form.get('sex')
+    return render_template("recommendations.html", age=age, sex=sex)
 
 @app.route("/food-search/", strict_slashes = False)
 def get_food_search():
