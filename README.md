@@ -33,19 +33,19 @@ To address this issue, `get_foods_output.html` was modified to return a descript
 
 ## Code Smells Fixes
 
-### Issue #1
+### Issue #1: `homepage.css`
 The original coding in this project had a lot of duplicated code, particularly in the homepage.css. There were many excess lines in the CSS that applied to the same properties to multiple div tags, making the code very redundant and hard to maintain. 
 
-#### Fix: `homepage.css` 
+#### Fix:  
 To address this issue, excess lines were deleted, and commonly used CSS variables, such as font-family and background-color, were moved to the body{} selector. This centralized styling, reducing redundancy and improving readbility and maintainability.
 
 ---
 
-### Issue 2  
-\\ TODO
+### Issue #2: `recommendations.html`
+The code for displaying recommendations based on sex and age features clunky if/else statements and tons of reused code. The code is structured so that there is an entire block of html to display for each combination of age and sex. This uses far too much space and does not need to repeat any code. It also does not naturally indicate the relation between the input and output.
 
 #### Fix: 
-\\ TODO
+The code still utilizes if/else statements, but uses them to set variables which let us access cells from a defined table. This change takes up less than 20% of the space of the previous version. If else statements are used to group the given age into one of 7 age groups, which are used to determine recommendations from the table. The code is much more modular and readable this way.
 
 
 
