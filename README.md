@@ -34,7 +34,7 @@ To address this issue, `get_foods_output.html` was modified to return a descript
 ## Code Smells Fixes
 
 ### Issue #1: `homepage.css`
-The original coding in this project had a lot of duplicated code, particularly in the homepage.css. There were many excess lines in the CSS that applied to the same properties to multiple div tags, making the code very redundant and hard to maintain. 
+The first code smell we are addressing is Duplication. The original coding in this project had a lot of duplicated code, particularly in the homepage.css. There were many excess lines in the CSS that applied the same properties to multiple div tags, when they could have been applied once higher up. This duplicaton made the code very redundant, longer than necessary, and made it harder to find the code that needed editing, and thus, harder to maintain. 
 
 #### Fix:  
 To address this issue, excess lines were deleted, and commonly used CSS variables, such as font-family and background-color, were moved to the body{} selector. This centralized styling, reducing redundancy and improving readbility and maintainability.
@@ -42,11 +42,59 @@ To address this issue, excess lines were deleted, and commonly used CSS variable
 ---
 
 ### Issue #2: `recommendations.html`
-The code for displaying recommendations based on sex and age features clunky if/else statements and tons of reused code. The code is structured so that there is an entire block of html to display for each combination of age and sex. This uses far too much space and does not need to repeat any code. It also does not naturally indicate the relation between the input and output.
+The second code smell we are addressing is Long Method. Though this code technically isn't a method, this seemed like the most apt description for the problem that was fixed. The code for displaying recommendations based on sex and age features clunky if/else statements and tons of reused code. The code is structured so that there is an entire block of html to display for each combination of age and sex. This uses far too much space and does not need to repeat any code. It also does not naturally indicate the relation between the input and output.
 
 #### Fix: 
-The code still utilizes if/else statements, but uses them to set variables which let us access cells from a defined table. This change takes up less than 20% of the space of the previous version. If else statements are used to group the given age into one of 7 age groups, which are used to determine recommendations from the table. The code is much more modular and readable this way.
+The code still utilizes if/else statements, but uses them to set variables which let us access cells from a defined table. This change takes up less than 20% of the space of the previous version. If else statements are used to group the given age into one of 7 age groups, which are used to determine recommendations from the table. The code is much more modular and readable this way. This code isn't available to compare asgainst the front end deliverable submission because it was written for the design improvements and then modified to remove the code smell. To view the old code and compare, view commit #56, the push labeled "jumps to output" under the history of templates/recommendations.html, or alternatively, the code snippet below.
 
+```bash
+                    {% elif age == "4-8" %}
+                         {% if gender == 'male' %}
+                             <div class="nutrientreturn">
+                                 <h1>Macro Nutrients:</h1>
+                                     <ul>
+                                         <li>Protein(g): 19</li>
+                                         <li>Carbohydrate(g): 130</li>
+                                         <li>Dietary Fiber(g): 19.6</li>
+                                         <li>Total Fat(% of Daily Intake): 25 - 35%</li>
+                                     </ul>
+                                 <h1>Minerals:</h1>
+                                     <ul>
+                                         <li>Calcium(mg): 1000</li>
+                                         <li>Iron(mg): 10</li>
+                                         <li>Potassium(mg): 3800</li>
+                                         <li>Sodium(mg): 1900</li>
+                                         <li>Copper(mg): 0.44</li>
+                                     </ul>
+                             </div>
+                         {% else %}
+                             <div class="nutrientreturn">
+                                 <h1>Macro Nutrients:</h1>
+                                     <ul>
+                                         <li>Protein(g): 19</li>
+                                         <li>Carbohydrate(g): 130</li>
+                                         <li>Dietary Fiber(g): 16.8</li>
+                                         <li>Total Fat(% of Daily Intake): 25-35%</li>
+                                     </ul>
+                                 <h1>Minerals:</h1>
+                                     <ul>
+                                         <li>Calcium(mg): 1000</li>
+                                         <li>Iron(mg): 10</li>
+                                         <li>Potassium(mg): 3800</li>
+                                         <li>Sodium(mg): 1900</li>
+                                         <li>Copper(mg): 0.44</li>
+                                     </ul>
+                             </div>
+                         {% endif %}
+                     {% elif age == "9-13" %}
+                         {% if gender == 'male' %}
+                             <div class="nutrientreturn">
+                                 <h1>Macro Nutrients:</h1>
+                                     <ul>
+                                         <li>Protein(g): 34</li>
+                                         <li>Carbohydrate(g): 130</li>
+                                         <li>Dietary Fiber(g): 25.2</li>
+```
 
 
 # Command Line Interface
