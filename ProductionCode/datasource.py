@@ -1,6 +1,6 @@
 import psycopg2
 import ProductionCode.psqlConfig as config
-import numpy as np
+from numpy import array as np_array
 
 class DataSource:
 
@@ -33,12 +33,11 @@ class DataSource:
 
             query = "SELECT Description FROM food_nutrition WHERE Category = %s;"
             cursor.execute(query, (category,))
-            # use np to squeeze
-            descriptions = np.array(cursor.fetchall()).squeeze(1)
+            descriptions = np_array(cursor.fetchall()).squeeze(1)
 
             return list(descriptions)
 
-        except Exception as e:
+        except Exception:
             return  []
 
     def fromDescriptionGetNutrition(self, description):
@@ -58,13 +57,13 @@ class DataSource:
 
                 # use np to squeeze
                 cursor.execute(columns_query)
-                labels = np.array(cursor.fetchall()).squeeze(1)[3:]
+                labels = np_array(cursor.fetchall()).squeeze(1)[3:]
                 cursor.execute(data_query, (description,))
-                data = np.array(cursor.fetchall()).squeeze(0)[3:]
+                data = np_array(cursor.fetchall()).squeeze(0)[3:]
 
                 return list(labels), list(data)
 
-            except Exception as e:
+            except Exception:
                 return [],[]
             
     def fromDescriptionGetNutrition(self, description):
@@ -84,9 +83,9 @@ class DataSource:
 
             # use np to squeeze
             cursor.execute(columns_query)
-            labels = np.array(cursor.fetchall()).squeeze(1)[3:]
+            labels = np_array(cursor.fetchall()).squeeze(1)[3:]
             cursor.execute(data_query, (description,))
-            data = np.array(cursor.fetchall()).squeeze(0)[3:]
+            data = np_array(cursor.fetchall()).squeeze(0)[3:]
 
             # Nutrient units mapping
             nutrient_units = {
@@ -139,5 +138,5 @@ class DataSource:
 
             return list(labels_with_units), list(data)
 
-        except Exception as e:
+        except Exception:
             return [], []
