@@ -1,10 +1,13 @@
-# Contributors
+# Nutritrack Website
+NutriTrack is a website that gives dietary recommendations and allows easy searching of a comprehensive nutritional info database.
+
+## Contributors
 Aaron Banse\
 Emma Yao\
 Nora Wooten\
 Nathan Yang
 
-# Running the Flask App
+## Running the Flask App
 
 ```bash
 $ python3 flask_app.py
@@ -18,7 +21,7 @@ Press CTRL+C to quit
  * Debugger PIN: 120-841-765
 ```
 
-# Command Line Interface
+## Command Line Interface
 
 ### Example Commands
 ```bash
