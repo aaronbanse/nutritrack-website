@@ -3,9 +3,9 @@ NutriTrack is a website that gives dietary recommendations and allows easy searc
 
 ## Contributors
 Aaron Banse\
-Emma Yao\
 Nora Wooten\
-Nathan Yang
+Nathan Yang\
+Emma Yao
 
 ## Running the Flask App
 
